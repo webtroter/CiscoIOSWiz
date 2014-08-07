@@ -1,0 +1,23 @@
+c:\users\usager\documents\visual studio 2010\Projects\Cisco-Config-Wiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.exe
+c:\users\usager\documents\visual studio 2010\Projects\Cisco-Config-Wiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.pdb
+c:\users\usager\documents\visual studio 2010\Projects\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.Form1.resources
+c:\users\usager\documents\visual studio 2010\Projects\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.Properties.Resources.resources
+c:\users\usager\documents\visual studio 2010\Projects\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csproj.GenerateResource.Cache
+c:\users\usager\documents\visual studio 2010\Projects\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.exe
+c:\users\usager\documents\visual studio 2010\Projects\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.pdb
+K:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.exe
+K:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.pdb
+K:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.exe
+K:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.pdb
+K:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csprojResolveAssemblyReference.cache
+K:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.Form1.resources
+K:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.Properties.Resources.resources
+K:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csproj.GenerateResource.Cache
+E:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.exe
+E:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.pdb
+E:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.exe
+E:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.pdb
+E:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csprojResolveAssemblyReference.cache
+E:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.Form1.resources
+E:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.Properties.Resources.resources
+E:\École\Cisco-Config-Wiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csproj.GenerateResource.Cache

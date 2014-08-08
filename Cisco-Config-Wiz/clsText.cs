@@ -28,11 +28,17 @@ namespace Cisco_Config_Wiz
         /// <summary>
         /// Will be TRUE if the text box is not the title or empty
         /// </summary>
-        private bool m_BoxMode = true;
-        public bool BoxMode
+        private BoxMode m_BoxMode = BoxMode.Default;
+        public BoxMode BoxModeObj
         {
             get { return m_BoxMode; }
             private set { m_BoxMode = value; }
+        }
+        public static enum BoxMode
+        {
+            Default,
+            Title,
+            Password
         }
         /// <summary>
         /// If the textbox is in Password mode
@@ -56,14 +62,15 @@ namespace Cisco_Config_Wiz
             {
                 m_txtBox.Text = Title;
                 m_txtBox.ForeColor = Color.Gray;
-                m_BoxMode = true;
+                m_BoxMode = BoxMode.Title;
 
             }
             else
             {
                 m_txtBox.Text = "";
                 m_txtBox.ForeColor = Color.Black;
-                m_BoxMode = false;
+                m_BoxMode = BoxMode.Default;
+
             }
         }
         #endregion
@@ -85,7 +92,7 @@ namespace Cisco_Config_Wiz
         /// <param name="pTitle">Title of the TextBox</param>
         /// <param name="pTxtBox">TextBox that you want to use</param>
         /// <param name="pBoxMode">Mode of the text box when you start. Title(true) by default.</param>
-        public clsText(string pTitle, TextBox pTxtBox, bool pBoxMode)
+        public clsText(string pTitle, TextBox pTxtBox, BoxMode pBoxMode)
         {
             m_txtBox = pTxtBox;
             Title = pTitle;

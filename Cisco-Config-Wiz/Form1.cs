@@ -33,7 +33,7 @@ namespace Cisco_Config_Wiz
 
         private void txtEnPass_Enter(object sender, EventArgs e)
         {
-            if (obj_EnPass.BoxMode)
+            if (obj_EnPass.BoxModeObj == clsText.BoxMode.Default)
             {
                 obj_EnPass.SetBoxMode(false);
             }
@@ -46,7 +46,7 @@ namespace Cisco_Config_Wiz
                 obj_EnPass.SetBoxMode(true);
             }
         }
-        
+
         #endregion
         #region VTY
         private void chkVTYLogin_CheckedChanged(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace Cisco_Config_Wiz
         }
         private void txtVTYPass_Enter(object sender, EventArgs e)
         {
-            if (obj_VTYPass.BoxMode)
+            if (obj_VTYPass.BoxModeObj == clsText.BoxMode.Default)
             {
                 obj_VTYPass.SetBoxMode(false);
             }
@@ -77,7 +77,7 @@ namespace Cisco_Config_Wiz
 
         private void txtConPass_Enter(object sender, EventArgs e)
         {
-            if (obj_CONPass.BoxMode)
+            if (obj_CONPass.BoxModeObj == clsText.BoxMode.Title)
             {
                 obj_CONPass.SetBoxMode(false);
             }
@@ -89,8 +89,12 @@ namespace Cisco_Config_Wiz
             {
                 obj_CONPass.SetBoxMode(true);
             }
-            
+
         }
         #endregion
+
+
+
+
     }
 }

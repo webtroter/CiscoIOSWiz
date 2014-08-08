@@ -26,15 +26,14 @@ namespace Cisco_Config_Wiz
         #region Enable
         private void chkEnLogin_CheckedChanged(object sender, EventArgs e)
         {
-            txtEnPass.Enabled = chkEnLogin.Checked;
-            chkEncrypt.Enabled = chkEnLogin.Checked;
+            txtEnPass.Enabled = chkEncrypt.Enabled = chkEnLogin.Checked;
         }
 
         private void txtEnPass_Enter(object sender, EventArgs e)
         {
-            if (obj_EnPass.BoxModeObj == clsText.BoxMode.Default)
+            if (obj_EnPass.BoxModeObj == clsText.BoxMode.Title)
             {
-                obj_EnPass.SetBoxMode(false);
+                obj_EnPass.SetBoxMode(clsText.BoxMode.Default);
             }
         }
 
@@ -42,7 +41,7 @@ namespace Cisco_Config_Wiz
         {
             if (obj_EnPass.txtBox.TextLength == 0)
             {
-                obj_EnPass.SetBoxMode(true);
+                obj_EnPass.SetBoxMode(clsText.BoxMode.Title);
             }
         }
 
@@ -54,9 +53,9 @@ namespace Cisco_Config_Wiz
         }
         private void txtVTYPass_Enter(object sender, EventArgs e)
         {
-            if (obj_VTYPass.BoxModeObj == clsText.BoxMode.Default)
+            if (obj_VTYPass.BoxModeObj == clsText.BoxMode.Title)
             {
-                obj_VTYPass.SetBoxMode(false);
+                obj_VTYPass.SetBoxMode(clsText.BoxMode.Default);
             }
         }
 
@@ -64,7 +63,7 @@ namespace Cisco_Config_Wiz
         {
             if (obj_VTYPass.txtBox.TextLength == 0)
             {
-                obj_VTYPass.SetBoxMode(true);
+                obj_VTYPass.SetBoxMode(clsText.BoxMode.Title);
             }
         }
         #endregion
@@ -78,7 +77,7 @@ namespace Cisco_Config_Wiz
         {
             if (obj_CONPass.BoxModeObj == clsText.BoxMode.Title)
             {
-                obj_CONPass.SetBoxMode(false);
+                obj_CONPass.SetBoxMode(clsText.BoxMode.Default);
             }
         }
 
@@ -86,7 +85,7 @@ namespace Cisco_Config_Wiz
         {
             if (obj_CONPass.txtBox.TextLength == 0)
             {
-                obj_CONPass.SetBoxMode(true);
+                obj_CONPass.SetBoxMode(clsText.BoxMode.Title);
             }
 
         }

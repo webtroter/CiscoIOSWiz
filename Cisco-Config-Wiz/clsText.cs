@@ -34,7 +34,7 @@ namespace Cisco_Config_Wiz
             get { return m_BoxMode; }
             private set { m_BoxMode = value; }
         }
-        public static enum BoxMode
+        public enum BoxMode
         {
             Default,
             Title,

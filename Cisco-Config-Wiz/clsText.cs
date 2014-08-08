@@ -26,7 +26,7 @@ namespace Cisco_Config_Wiz
             set;
         }
         /// <summary>
-        /// Will be TRUE if the text box is not the title or empty
+        /// Will tell if the BoxMode is in Title, Password or default
         /// </summary>
         private BoxMode m_BoxMode = BoxMode.Default;
         public BoxMode BoxModeObj
@@ -40,15 +40,6 @@ namespace Cisco_Config_Wiz
             Title,
             Password
         }
-        /// <summary>
-        /// If the textbox is in Password mode
-        /// </summary>
-        public bool Password
-        {
-            get { return Password; }
-            set { Password = value; }
-        }
-
         #endregion
 
         #region Méthodes

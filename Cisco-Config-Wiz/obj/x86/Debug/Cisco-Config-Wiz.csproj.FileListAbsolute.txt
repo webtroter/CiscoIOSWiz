@@ -37,3 +37,5 @@ C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-W
 C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.pdb
 C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.pdb
 C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csprojResolveAssemblyReference.cache
+C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.exe.config
+C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\IPAddressControlLib.dll

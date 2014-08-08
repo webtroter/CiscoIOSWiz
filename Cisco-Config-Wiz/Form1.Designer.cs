@@ -49,6 +49,7 @@
             this.txtHostname = new System.Windows.Forms.TextBox();
             this.interCFG = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ipAddressControl1 = new IPAddressControlLib.IPAddressControl();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.routingCFG = new System.Windows.Forms.TabPage();
             this.output = new System.Windows.Forms.TabPage();
@@ -325,6 +326,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ipAddressControl1);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
@@ -332,6 +334,21 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // ipAddressControl1
+            // 
+            this.ipAddressControl1.AllowInternalTab = false;
+            this.ipAddressControl1.AutoHeight = true;
+            this.ipAddressControl1.BackColor = System.Drawing.SystemColors.Window;
+            this.ipAddressControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ipAddressControl1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ipAddressControl1.Location = new System.Drawing.Point(6, 19);
+            this.ipAddressControl1.MinimumSize = new System.Drawing.Size(87, 20);
+            this.ipAddressControl1.Name = "ipAddressControl1";
+            this.ipAddressControl1.ReadOnly = false;
+            this.ipAddressControl1.Size = new System.Drawing.Size(122, 20);
+            this.ipAddressControl1.TabIndex = 1;
+            this.ipAddressControl1.Text = "10.0.0.1";
             // 
             // comboBox1
             // 
@@ -643,6 +660,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private IPAddressControlLib.IPAddressControl ipAddressControl1;
     }
 }
 

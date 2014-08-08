@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using IPAddressControlLib;
 
 namespace Cisco_Config_Wiz
 {
@@ -27,6 +28,8 @@ namespace Cisco_Config_Wiz
             obj_Hostname = new clsText("Hostname", txtHostname);
             obj_Banner = new clsText("Login Banner", txtLogBanner);
             obj_MOTD = new clsText("MOTD", txtMotdBanner);
+
+            Console.WriteLine(ipAddressControl1.Text);
 
         }
         #region Constants
@@ -109,7 +112,7 @@ namespace Cisco_Config_Wiz
         {
             if (obj_EnPass.BoxModeObj == clsText.BoxMode.Title)
             {
-                obj_EnPass.SetBoxMode(clsText.BoxMode.Default);
+                obj_EnPass.SetBoxMode(clsText.BoxMode.Password);
             }
         }
 
@@ -131,7 +134,7 @@ namespace Cisco_Config_Wiz
         {
             if (obj_VTYPass.BoxModeObj == clsText.BoxMode.Title)
             {
-                obj_VTYPass.SetBoxMode(clsText.BoxMode.Default);
+                obj_VTYPass.SetBoxMode(clsText.BoxMode.Password);
             }
         }
 
@@ -166,12 +169,6 @@ namespace Cisco_Config_Wiz
 
         }
         #endregion
-
-        
-
-        
-
-
 
 
     }

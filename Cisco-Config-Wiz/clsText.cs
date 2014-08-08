@@ -34,6 +34,9 @@ namespace Cisco_Config_Wiz
             get { return m_BoxMode; }
             private set { m_BoxMode = value; }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public enum BoxMode
         {
             Default,
@@ -44,9 +47,9 @@ namespace Cisco_Config_Wiz
 
         #region Méthodes
         /// <summary>
-        /// Will set the TextBox the way you want.
+        /// 
         /// </summary>
-        /// <param name="pMode">TextBoxMode : True=>Title, False=>Text,</param>
+        /// <param name="pMode"></param>
         public void SetBoxMode(BoxMode pMode)
         {
             switch (pMode)

@@ -284,6 +284,9 @@
             this.txtMotdBanner.Size = new System.Drawing.Size(180, 20);
             this.txtMotdBanner.TabIndex = 2;
             this.txtMotdBanner.Text = "MOTD";
+            this.txtMotdBanner.TextChanged += new System.EventHandler(this.txtMotdBanner_TextChanged);
+            this.txtMotdBanner.Enter += new System.EventHandler(this.txtMotdBanner_Enter);
+            this.txtMotdBanner.Leave += new System.EventHandler(this.txtMotdBanner_Leave);
             // 
             // txtLogBanner
             // 
@@ -293,6 +296,9 @@
             this.txtLogBanner.Size = new System.Drawing.Size(180, 20);
             this.txtLogBanner.TabIndex = 2;
             this.txtLogBanner.Text = "Login Banner";
+            this.txtLogBanner.TextChanged += new System.EventHandler(this.txtLogBanner_TextChanged);
+            this.txtLogBanner.Enter += new System.EventHandler(this.txtLogBanner_Enter);
+            this.txtLogBanner.Leave += new System.EventHandler(this.txtLogBanner_Leave);
             // 
             // txtHostname
             // 
@@ -302,6 +308,9 @@
             this.txtHostname.Size = new System.Drawing.Size(180, 20);
             this.txtHostname.TabIndex = 2;
             this.txtHostname.Text = "Hostname";
+            this.txtHostname.TextChanged += new System.EventHandler(this.txtHostname_TextChanged);
+            this.txtHostname.Enter += new System.EventHandler(this.txtHostname_Enter);
+            this.txtHostname.Leave += new System.EventHandler(this.txtHostname_Leave);
             // 
             // interCFG
             // 

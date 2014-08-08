@@ -90,6 +90,7 @@ namespace Cisco_Config_Wiz
             m_txtBox = pTxtBox;
             Title = pTitle;
             m_BoxMode = BoxMode.Title;
+            SetBoxMode(m_BoxMode);
         }
         /// <summary>
         /// TextBox with Title and password option
@@ -102,6 +103,7 @@ namespace Cisco_Config_Wiz
             m_txtBox = pTxtBox;
             Title = pTitle;
             m_BoxMode = pBoxMode;
+            SetBoxMode(m_BoxMode);
         }
         #endregion
     }

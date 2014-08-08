@@ -26,7 +26,7 @@ namespace Cisco_Config_Wiz
             set;
         }
         /// <summary>
-        /// Will tell if the BoxMode is in Title, Password or default
+        /// Will tell if the BoxMode is in Title, Password or default. v1.1.0.0
         /// </summary>
         private BoxMode m_BoxMode = BoxMode.Default;
         public BoxMode BoxModeObj

@@ -26,8 +26,10 @@ namespace Cisco_Config_Wiz
         #region Enable
         private void chkEnLogin_CheckedChanged(object sender, EventArgs e)
         {
-            txtEnPass.Enabled = chkEnLogin.Checked;
-            chkEncrypt.Enabled = chkEnLogin.Checked;
+            txtEnPass.Enabled = 
+                chkEnLogin.Checked = 
+                chkEncrypt.Enabled = 
+                chkEnLogin.Checked;
         }
 
         private void txtEnPass_Enter(object sender, EventArgs e)

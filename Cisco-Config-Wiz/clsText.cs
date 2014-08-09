@@ -18,7 +18,7 @@ namespace Cisco_Config_Wiz
             private set { m_txtBox = value; }
         }
         /// <summary>
-        /// Title of the textbox
+        /// Title of the textbox.
         /// </summary>
         public string Title
         {
@@ -49,7 +49,7 @@ namespace Cisco_Config_Wiz
         /// <param name="pMode">TextBoxMode : True=>Title, False=>Text,</param>
         public void SetBoxMode(bool pMode)
         {
-            if (pMode == true)
+            if (pMode) //if true
             {
                 m_txtBox.Text = Title;
                 m_txtBox.ForeColor = Color.Gray;

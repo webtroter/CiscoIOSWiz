@@ -13,7 +13,7 @@ namespace Cisco_Config_Wiz
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+            Application.EnableVisualStyles(); //CHECK: Enlever Application.EnableVisualStyles(); pour plus de swag Win95
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }

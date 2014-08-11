@@ -47,21 +47,34 @@ namespace Cisco_Config_Wiz
         /// Will set the TextBox the way you want.
         /// </summary>
         /// <param name="pMode">TextBoxMode : True=>Title, False=>Text,</param>
-        public void SetBoxMode(bool pMode)
+        public void SetBoxMode(BoxMode pMode)
         {
-            if (pMode) //if true
+            switch (pMode)
             {
-                m_txtBox.Text = Title;
-                m_txtBox.ForeColor = Color.Gray;
-                m_BoxMode = BoxMode.Title;
-
-            }
-            else
-            {
-                m_txtBox.Text = "";
-                m_txtBox.ForeColor = Color.Black;
-                m_BoxMode = BoxMode.Default;
-
+                case BoxMode.Default:
+                    m_txtBox.Text = "";
+                    m_txtBox.ForeColor = Color.Black;
+                    m_txtBox.UseSystemPasswordChar = false;
+                    m_BoxMode = BoxMode.Default;
+                    break;
+                case BoxMode.Title:
+                    m_txtBox.Text = Title;
+                    m_txtBox.ForeColor = Color.Gray;
+                    m_txtBox.UseSystemPasswordChar = false;
+                    m_BoxMode = BoxMode.Title;
+                    break;
+                case BoxMode.Password:
+                    m_txtBox.Text = "";
+                    m_txtBox.ForeColor = Color.Black;
+                    m_txtBox.UseSystemPasswordChar = true;
+                    m_BoxMode = BoxMode.Password;
+                    break;
+                default:
+                    m_txtBox.Text = "";
+                    m_txtBox.ForeColor = Color.Black;
+                    m_txtBox.UseSystemPasswordChar = false;
+                    m_BoxMode = BoxMode.Default;
+                    break;
             }
         }
         #endregion
@@ -76,6 +89,8 @@ namespace Cisco_Config_Wiz
         {
             m_txtBox = pTxtBox;
             Title = pTitle;
+            m_BoxMode = BoxMode.Title;
+            SetBoxMode(m_BoxMode);
         }
         /// <summary>
         /// TextBox with Title and password option
@@ -88,6 +103,7 @@ namespace Cisco_Config_Wiz
             m_txtBox = pTxtBox;
             Title = pTitle;
             m_BoxMode = pBoxMode;
+            SetBoxMode(m_BoxMode);
         }
         #endregion
     }

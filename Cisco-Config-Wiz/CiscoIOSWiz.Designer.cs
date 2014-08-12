@@ -1,6 +1,6 @@
 ﻿namespace Cisco_Config_Wiz
 {
-    partial class Form1
+    partial class CiscoIOSWiz
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CiscoIOSWiz));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.mainCFG = new System.Windows.Forms.TabPage();
             this.grpCon = new System.Windows.Forms.GroupBox();
@@ -584,14 +584,14 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
-            // Form1
+            // CiscoIOSWiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(607, 404);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "Form1";
+            this.Name = "CiscoIOSWiz";
             this.Text = "Cisco IOS Configuration Wizard";
             this.tabControl1.ResumeLayout(false);
             this.mainCFG.ResumeLayout(false);

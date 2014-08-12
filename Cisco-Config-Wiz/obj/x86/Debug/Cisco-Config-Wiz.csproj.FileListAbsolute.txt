@@ -38,3 +38,12 @@ C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-W
 C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.Properties.Resources.resources
 C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csproj.GenerateResource.Cache
 C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.exe.config
+C:\Users\Alexis\ProgProjects\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.exe.config
+C:\Users\Alexis\ProgProjects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.exe
+C:\Users\Alexis\ProgProjects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.pdb
+C:\Users\Alexis\ProgProjects\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.exe
+C:\Users\Alexis\ProgProjects\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.pdb
+C:\Users\Alexis\ProgProjects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csprojResolveAssemblyReference.cache
+C:\Users\Alexis\ProgProjects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.Form1.resources
+C:\Users\Alexis\ProgProjects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.Properties.Resources.resources
+C:\Users\Alexis\ProgProjects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csproj.GenerateResource.Cache

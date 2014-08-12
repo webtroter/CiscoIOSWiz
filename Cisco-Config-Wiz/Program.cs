@@ -15,7 +15,7 @@ namespace Cisco_Config_Wiz
         {
             Application.EnableVisualStyles(); //CHECK: Enlever Application.EnableVisualStyles(); pour plus de swag Win95
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CiscoIOSWiz());
+            Application.Run(new Form1());
         }
     }
 }

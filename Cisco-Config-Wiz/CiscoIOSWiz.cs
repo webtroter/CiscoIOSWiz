@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Cisco_Config_Wiz
 {
-    public partial class CiscoIOSWiz : Form
+    public partial class Form1 : Form
     {
         clsText obj_EnPass;
         clsText obj_VTYPass;
@@ -17,7 +17,7 @@ namespace Cisco_Config_Wiz
         clsText obj_Hostname;
         clsText obj_Banner;
         clsText obj_MOTD;
-        public CiscoIOSWiz()
+        public Form1()
         {
             InitializeComponent();
             obj_EnPass = new clsText("Password", txtEnPass);

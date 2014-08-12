@@ -1,6 +1,6 @@
 ﻿namespace Cisco_Config_Wiz
 {
-    partial class CiscoIOSWiz
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CiscoIOSWiz));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.mainCFG = new System.Windows.Forms.TabPage();
             this.grpCon = new System.Windows.Forms.GroupBox();

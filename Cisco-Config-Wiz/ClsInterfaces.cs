@@ -30,7 +30,7 @@ namespace Cisco_Config_Wiz
             set;
         }
 
-        public string Numéro
+        public string Number
         {
             get;
             set;
@@ -50,7 +50,10 @@ namespace Cisco_Config_Wiz
         private int m_CIDR;
         public int CIDRMask
         {
-            get;
+            get
+            {
+                return m_CIDR;
+            }
             set
             {
                 if (value < 0)
@@ -87,12 +90,21 @@ namespace Cisco_Config_Wiz
 
         public override string ToString()
         {
-            return Name + " (" + 
-            return base.ToString();
+            return Name + " (" + ReturnType(Type) + Number.ToString();
         }
         public string ReturnType(InterfaceType pType)
         {
-
+            switch (pType)
+            {
+                case InterfaceType.FastEthernet:
+                    return "FastEthernet";
+                case InterfaceType.Serial:
+                    return "Serial";
+                case InterfaceType.Loopback:
+                    return "Loopback";
+                default:
+                    return "";
+            }
         }
 
         #endregion

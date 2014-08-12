@@ -212,6 +212,12 @@ namespace Cisco_Config_Wiz
         #endregion
         #endregion
 
+        #region UI
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormAbout().ShowDialog();
+        }
+        #endregion
 
     }
 }

@@ -17,14 +17,31 @@ namespace Cisco_Config_Wiz
             set;
         }
 
-        public enum InterfaceType
+        public enum InterfaceTypes
         {
             FastEthernet,
             Serial,
             Loopback,
         }
 
-        public InterfaceType Type
+        public enum Suits
+        {
+            Spades,
+            Hearts,
+            Clubs,
+            Diamonds,
+            NumSuits
+        }
+
+        public void PrintAllSuits()
+        {
+            foreach (var suit in Enum.GetValues(typeof(Suits)))
+            {
+                Console.WriteLine(suit.ToString());
+            }
+        }
+
+        public InterfaceTypes Type
         {
             get;
             set;
@@ -79,7 +96,7 @@ namespace Cisco_Config_Wiz
 
         #region Constructeurs
 
-        public clsInterfaces(string pName, InterfaceType pType, string pNumInterface)
+        public clsInterfaces(string pName, InterfaceTypes pType, string pNumInterface)
         {
 
         }
@@ -92,19 +109,29 @@ namespace Cisco_Config_Wiz
         {
             return Name + " (" + ReturnType(Type) + Number.ToString();
         }
-        public string ReturnType(InterfaceType pType)
+        public string ReturnType(InterfaceTypes pType)
         {
             switch (pType)
             {
-                case InterfaceType.FastEthernet:
+                case InterfaceTypes.FastEthernet:
                     return "FastEthernet";
-                case InterfaceType.Serial:
+                case InterfaceTypes.Serial:
                     return "Serial";
-                case InterfaceType.Loopback:
+                case InterfaceTypes.Loopback:
                     return "Loopback";
                 default:
                     return "";
             }
+        }
+
+        public List<string> GetInterfaceTypes()
+        {
+            List<string> interTypes = new List<string>();
+            foreach (var interfType in Enum.GetNames(typeof(InterfaceTypes)))
+            {
+                interTypes.Add(interfType.ToString());
+            }
+            return interTypes;
         }
 
         #endregion

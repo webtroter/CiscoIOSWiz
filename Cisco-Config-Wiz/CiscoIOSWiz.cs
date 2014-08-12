@@ -17,6 +17,8 @@ namespace Cisco_Config_Wiz
         clsText obj_Hostname;
         clsText obj_Banner;
         clsText obj_MOTD;
+        clsText obj_NewInterfaceName;
+        clsText obj_NewInterfacenumber;
         public CiscoIOSWiz()
         {
             InitializeComponent();
@@ -26,7 +28,14 @@ namespace Cisco_Config_Wiz
             obj_Hostname = new clsText("Hostname", txtHostname);
             obj_Banner = new clsText("Login Banner", txtLogBanner);
             obj_MOTD = new clsText("MOTD", txtMotdBanner);
+            obj_NewInterfaceName = new clsText("Interface Name", txtNewInterfaceName);
+            obj_NewInterfacenumber = new clsText("Interface Number", txtNewInterfaceNumber);
+            foreach (var interfType in Enum.GetNames(typeof(clsInterfaces.InterfaceTypes)))
+            {
+                cboNewInterfaceType.Items.Add(interfType.ToString());
+            }
         }
+        #region General Conf
         #region Constants
         #endregion
         #region Name and Banners
@@ -96,7 +105,6 @@ namespace Cisco_Config_Wiz
         #endregion
 
         #endregion
-
         #region Enable
         private void chkEnLogin_CheckedChanged(object sender, EventArgs e)
         {
@@ -165,7 +173,44 @@ namespace Cisco_Config_Wiz
         }
         #endregion
 
+        #endregion
+        #region Interfaces
 
+        #region New Interface Name
+        private void txtNewInterfaceName_Enter(object sender, EventArgs e)
+        {
+            if (obj_NewInterfaceName.BoxModeObj == clsText.BoxMode.Title)
+            {
+                obj_NewInterfaceName.SetBoxMode(clsText.BoxMode.Default);
+            }
+        }
+
+        private void txtNewInterfaceName_Leave(object sender, EventArgs e)
+        {
+            if (obj_NewInterfaceName.txtBox.TextLength == 0)
+            {
+                obj_NewInterfaceName.SetBoxMode(clsText.BoxMode.Title);
+            }
+        }
+        #endregion
+        #region New Interface Number
+        private void txtNewInterfaceNumber_Enter(object sender, EventArgs e)
+        {
+            if (obj_NewInterfacenumber.BoxModeObj == clsText.BoxMode.Title)
+            {
+                obj_NewInterfacenumber.SetBoxMode(clsText.BoxMode.Default);
+            }
+        }
+
+        private void txtNewInterfaceNumber_Leave(object sender, EventArgs e)
+        {
+            if (obj_NewInterfacenumber.txtBox.TextLength == 0)
+            {
+                obj_NewInterfacenumber.SetBoxMode(clsText.BoxMode.Title);
+            }
+        }
+        #endregion
+        #endregion
 
 
     }

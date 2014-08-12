@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Cisco_Config_Wiz.clsText" Collapsed="true">
-    <Position X="6.5" Y="0.5" Width="2" />
+  <Class Name="Cisco_Config_Wiz.clsText">
+    <Position X="4" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -20,26 +20,38 @@
   <Class Name="Cisco_Config_Wiz.CiscoIOSWiz" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>jcCCCjkhYCCYIoEaAICSiINSSIBCKCAAQyAAAjQoFgA=</HashCode>
+      <HashCode>zcCCCjkhYiCYIoEKAIOSiINTTYBCKCEAQyACIjQoFgA=</HashCode>
       <FileName>CiscoIOSWiz.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Cisco_Config_Wiz.clsInterfaces">
-    <Position X="2.25" Y="0.5" Width="2" />
+    <Position X="2.25" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Enum Name="Cisco_Config_Wiz.clsInterfaces.InterfaceType">
+      <Enum Name="Cisco_Config_Wiz.clsInterfaces.InterfaceTypes">
         <TypeIdentifier>
           <NewMemberFileName>ClsInterfaces.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
+      <Enum Name="Cisco_Config_Wiz.clsInterfaces.Suits" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>clsInterfaces.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAAAAEgAAQAIQAAAAAAAAAAQKAAAAGAAA=</HashCode>
+      <HashCode>AAAAAABAAAAAAAAEgEAAAIQAAgAAAAAAAQKAAAAGAAA=</HashCode>
       <FileName>clsInterfaces.cs</FileName>
       <NewMemberFileName>ClsInterfaces.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cisco_Config_Wiz.clsConfWiz">
+    <Position X="5.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>clsConfWiz.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

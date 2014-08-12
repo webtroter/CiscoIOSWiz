@@ -50,7 +50,7 @@
             this.interCFG = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ipAddressControl1 = new IPAddressControlLib.IPAddressControl();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboInterfaces = new System.Windows.Forms.ComboBox();
             this.routingCFG = new System.Windows.Forms.TabPage();
             this.output = new System.Windows.Forms.TabPage();
             this.txtOutput = new System.Windows.Forms.RichTextBox();
@@ -78,6 +78,10 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtNewInterfaceName = new System.Windows.Forms.TextBox();
+            this.txtNewInterfaceNumber = new System.Windows.Forms.TextBox();
+            this.cboNewInterfaceType = new System.Windows.Forms.ComboBox();
+            this.btnnewInterfaceAdd = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.mainCFG.SuspendLayout();
             this.grpCon.SuspendLayout();
@@ -315,6 +319,10 @@
             // 
             // interCFG
             // 
+            this.interCFG.Controls.Add(this.btnnewInterfaceAdd);
+            this.interCFG.Controls.Add(this.cboNewInterfaceType);
+            this.interCFG.Controls.Add(this.txtNewInterfaceNumber);
+            this.interCFG.Controls.Add(this.txtNewInterfaceName);
             this.interCFG.Controls.Add(this.groupBox1);
             this.interCFG.Location = new System.Drawing.Point(4, 22);
             this.interCFG.Name = "interCFG";
@@ -327,13 +335,13 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.ipAddressControl1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Controls.Add(this.cboInterfaces);
+            this.groupBox1.Location = new System.Drawing.Point(6, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(585, 333);
+            this.groupBox1.Size = new System.Drawing.Size(585, 289);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Interface";
             // 
             // ipAddressControl1
             // 
@@ -350,18 +358,19 @@
             this.ipAddressControl1.TabIndex = 1;
             this.ipAddressControl1.Text = "...";
             // 
-            // comboBox1
+            // cboInterfaces
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboInterfaces.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboInterfaces.FormattingEnabled = true;
+            this.cboInterfaces.Items.AddRange(new object[] {
             "Fa0/0",
             "Fa0/1",
             "S0/0/0",
             "S0/0/0"});
-            this.comboBox1.Location = new System.Drawing.Point(401, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(178, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cboInterfaces.Location = new System.Drawing.Point(401, 0);
+            this.cboInterfaces.Name = "cboInterfaces";
+            this.cboInterfaces.Size = new System.Drawing.Size(178, 21);
+            this.cboInterfaces.TabIndex = 0;
             // 
             // routingCFG
             // 
@@ -584,6 +593,42 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
+            // txtNewInterfaceName
+            // 
+            this.txtNewInterfaceName.Location = new System.Drawing.Point(13, 8);
+            this.txtNewInterfaceName.Name = "txtNewInterfaceName";
+            this.txtNewInterfaceName.Size = new System.Drawing.Size(138, 20);
+            this.txtNewInterfaceName.TabIndex = 1;
+            this.txtNewInterfaceName.Enter += new System.EventHandler(this.txtNewInterfaceName_Enter);
+            this.txtNewInterfaceName.Leave += new System.EventHandler(this.txtNewInterfaceName_Leave);
+            // 
+            // txtNewInterfaceNumber
+            // 
+            this.txtNewInterfaceNumber.Location = new System.Drawing.Point(332, 8);
+            this.txtNewInterfaceNumber.Name = "txtNewInterfaceNumber";
+            this.txtNewInterfaceNumber.Size = new System.Drawing.Size(137, 20);
+            this.txtNewInterfaceNumber.TabIndex = 1;
+            this.txtNewInterfaceNumber.Enter += new System.EventHandler(this.txtNewInterfaceNumber_Enter);
+            this.txtNewInterfaceNumber.Leave += new System.EventHandler(this.txtNewInterfaceNumber_Leave);
+            // 
+            // cboNewInterfaceType
+            // 
+            this.cboNewInterfaceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNewInterfaceType.FormattingEnabled = true;
+            this.cboNewInterfaceType.Location = new System.Drawing.Point(157, 8);
+            this.cboNewInterfaceType.Name = "cboNewInterfaceType";
+            this.cboNewInterfaceType.Size = new System.Drawing.Size(169, 21);
+            this.cboNewInterfaceType.TabIndex = 2;
+            // 
+            // btnnewInterfaceAdd
+            // 
+            this.btnnewInterfaceAdd.Location = new System.Drawing.Point(475, 6);
+            this.btnnewInterfaceAdd.Name = "btnnewInterfaceAdd";
+            this.btnnewInterfaceAdd.Size = new System.Drawing.Size(110, 23);
+            this.btnnewInterfaceAdd.TabIndex = 3;
+            this.btnnewInterfaceAdd.Text = "Add Interface";
+            this.btnnewInterfaceAdd.UseVisualStyleBackColor = true;
+            // 
             // CiscoIOSWiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,6 +649,7 @@
             this.boxGeneral.ResumeLayout(false);
             this.boxGeneral.PerformLayout();
             this.interCFG.ResumeLayout(false);
+            this.interCFG.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.output.ResumeLayout(false);
             this.output.PerformLayout();
@@ -662,9 +708,13 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboInterfaces;
         private System.Windows.Forms.RichTextBox txtOutput;
         private IPAddressControlLib.IPAddressControl ipAddressControl1;
+        private System.Windows.Forms.ComboBox cboNewInterfaceType;
+        private System.Windows.Forms.TextBox txtNewInterfaceNumber;
+        private System.Windows.Forms.TextBox txtNewInterfaceName;
+        private System.Windows.Forms.Button btnnewInterfaceAdd;
     }
 }
 

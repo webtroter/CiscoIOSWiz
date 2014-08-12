@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsConfWiz.cs" />
-    <Compile Include="ClsInterfaces.cs" />
+    <Compile Include="clsInterfaces.cs" />
     <Compile Include="clsText.cs" />
     <Compile Include="CiscoIOSWiz.cs">
       <SubType>Form</SubType>

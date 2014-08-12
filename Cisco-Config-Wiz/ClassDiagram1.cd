@@ -24,13 +24,13 @@
       <FileName>CiscoIOSWiz.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Cisco_Config_Wiz.ClsInterfaces">
+  <Class Name="Cisco_Config_Wiz.clsInterfaces">
     <Position X="2.25" Y="0.5" Width="2" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Enum Name="Cisco_Config_Wiz.ClsInterfaces.InterfaceType">
+      <Enum Name="Cisco_Config_Wiz.clsInterfaces.InterfaceType">
         <TypeIdentifier>
           <NewMemberFileName>ClsInterfaces.cs</NewMemberFileName>
         </TypeIdentifier>
@@ -38,7 +38,8 @@
     </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAABAAAAAAAAEgAAQAIQAAAAAAAAAAQKAAAAGAAA=</HashCode>
-      <FileName>ClsInterfaces.cs</FileName>
+      <FileName>clsInterfaces.cs</FileName>
+      <NewMemberFileName>ClsInterfaces.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

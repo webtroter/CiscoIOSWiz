@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Cisco_Config_Wiz
 {
-    class ClsInterfaces
+    class clsInterfaces
     {
         #region Constantes, variables et propriétés
 
@@ -76,7 +76,7 @@ namespace Cisco_Config_Wiz
 
         #region Constructeurs
 
-        public ClsInterfaces(string pName, InterfaceType pType, string pNumInterface)
+        public clsInterfaces(string pName, InterfaceType pType, string pNumInterface)
         {
 
         }

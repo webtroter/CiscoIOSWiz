@@ -445,7 +445,7 @@
             this.output.Name = "output";
             this.output.Size = new System.Drawing.Size(599, 350);
             this.output.TabIndex = 2;
-            this.output.Text = "Output Configuration";
+            this.output.Text = "Output";
             this.output.UseVisualStyleBackColor = true;
             // 
             // txtOutput
@@ -551,6 +551,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -742,4 +743,3 @@
         private System.Windows.Forms.TextBox txtNoInterfaceWarning;
     }
 }
-

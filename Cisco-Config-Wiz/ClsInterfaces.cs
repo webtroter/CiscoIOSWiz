@@ -19,26 +19,9 @@ namespace Cisco_Config_Wiz
 
         public enum InterfaceTypes
         {
-            FastEthernet,
-            Serial,
-            Loopback,
-        }
-
-        public enum Suits
-        {
-            Spades,
-            Hearts,
-            Clubs,
-            Diamonds,
-            NumSuits
-        }
-
-        public void PrintAllSuits()
-        {
-            foreach (var suit in Enum.GetValues(typeof(Suits)))
-            {
-                Console.WriteLine(suit.ToString());
-            }
+            Loopback = 0,
+            Serial = 1,
+            FastEthernet = 2,
         }
 
         public InterfaceTypes Type
@@ -98,7 +81,9 @@ namespace Cisco_Config_Wiz
 
         public clsInterfaces(string pName, InterfaceTypes pType, string pNumInterface)
         {
-
+            Name = pName;
+            Type = pType;
+            Number = pNumInterface;
         }
 
         #endregion

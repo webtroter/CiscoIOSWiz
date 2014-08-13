@@ -19,6 +19,7 @@ namespace Cisco_Config_Wiz
         clsText obj_MOTD;
         clsText obj_NewInterfaceName;
         clsText obj_NewInterfacenumber;
+        List<clsInterfaces> obj_ListInterfaces = new List<clsInterfaces>();
         public CiscoIOSWiz()
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace Cisco_Config_Wiz
             {
                 cboNewInterfaceType.Items.Add(interfType.ToString());
             }
+            cboNewInterfaceType.SelectedItem = cboNewInterfaceType.Items[0];
         }
         #region General Conf
         #region Constants
@@ -210,6 +212,12 @@ namespace Cisco_Config_Wiz
             }
         }
         #endregion
+        private void btnnewInterfaceAdd_Click(object sender, EventArgs e)
+        {
+            obj_ListInterfaces.Add(new clsInterfaces(txtNewInterfaceName.Text,
+                (clsInterfaces.InterfaceTypes)cboNewInterfaceType.SelectedIndex,
+                txtNewInterfaceNumber.Text));
+        }
         #endregion
 
         #region UI
@@ -218,6 +226,5 @@ namespace Cisco_Config_Wiz
             new FormAbout().ShowDialog();
         }
         #endregion
-
     }
 }

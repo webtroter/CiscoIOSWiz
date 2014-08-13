@@ -84,6 +84,7 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.tabControl1.SuspendLayout();
             this.mainCFG.SuspendLayout();
             this.grpCon.SuspendLayout();
@@ -651,6 +652,11 @@
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // SaveFileDialog
+            // 
+            this.SaveFileDialog.Filter = "Text files (*.txt)|*.txt|XML file (*.xml)|*.xml";
+            this.SaveFileDialog.FilterIndex = 0;
+            // 
             // CiscoIOSWiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -742,5 +748,6 @@
         private System.Windows.Forms.Button btnnewInterfaceAdd;
         private System.Windows.Forms.GroupBox boxNewInterface;
         private System.Windows.Forms.TextBox txtNoInterfaceWarning;
+        private System.Windows.Forms.SaveFileDialog SaveFileDialog;
     }
 }

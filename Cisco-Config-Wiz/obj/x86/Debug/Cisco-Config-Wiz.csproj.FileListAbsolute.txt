@@ -53,3 +53,4 @@ C:\Users\Didier\Desktop\Dossiers.Folders\Developpement\CiscoIOSWiz\Cisco-Config-
 C:\Users\Didier\Desktop\Dossiers.Folders\Developpement\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csproj.GenerateResource.Cache
 C:\Users\Didier\Desktop\Dossiers.Folders\Developpement\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.exe
 C:\Users\Didier\Desktop\Dossiers.Folders\Developpement\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.pdb
+C:\Users\Didier\Desktop\Dossiers.Folders\Developpement\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csprojResolveAssemblyReference.cache

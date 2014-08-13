@@ -232,7 +232,5 @@ namespace Cisco_Config_Wiz
             this.Close();
         }
         #endregion
-
-
     }
 }

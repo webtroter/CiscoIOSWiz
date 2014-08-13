@@ -54,3 +54,14 @@ C:\Users\Didier\Desktop\Dossiers.Folders\Developpement\CiscoIOSWiz\Cisco-Config-
 C:\Users\Didier\Desktop\Dossiers.Folders\Developpement\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.exe
 C:\Users\Didier\Desktop\Dossiers.Folders\Developpement\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.pdb
 C:\Users\Didier\Desktop\Dossiers.Folders\Developpement\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csprojResolveAssemblyReference.cache
+C:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.exe.config
+C:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.exe
+C:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.pdb
+C:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.exe
+C:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.pdb
+C:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\IPAddressControlLib.dll
+C:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csprojResolveAssemblyReference.cache
+C:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.CiscoIOSWiz.resources
+C:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.FormAbout.resources
+C:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.Properties.Resources.resources
+C:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csproj.GenerateResource.Cache

@@ -50,13 +50,11 @@
             this.interCFG = new System.Windows.Forms.TabPage();
             this.boxInterface = new System.Windows.Forms.GroupBox();
             this.txtNoInterfaceWarning = new System.Windows.Forms.TextBox();
-            this.ipAddressControl1 = new IPAddressControlLib.IPAddressControl();
             this.cboInterfaces = new System.Windows.Forms.ComboBox();
             this.boxNewInterface = new System.Windows.Forms.GroupBox();
             this.btnnewInterfaceAdd = new System.Windows.Forms.Button();
             this.cboNewInterfaceType = new System.Windows.Forms.ComboBox();
             this.txtNewInterfaceName = new System.Windows.Forms.TextBox();
-            this.txtNewInterfaceNumber = new System.Windows.Forms.TextBox();
             this.routingCFG = new System.Windows.Forms.TabPage();
             this.output = new System.Windows.Forms.TabPage();
             this.txtOutput = new System.Windows.Forms.RichTextBox();
@@ -85,6 +83,21 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.txtNewInterfaceNumber = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblIPAddress = new System.Windows.Forms.Label();
+            this.lblInterface = new System.Windows.Forms.Label();
+            this.lblCIDR = new System.Windows.Forms.Label();
+            this.lblMask = new System.Windows.Forms.Label();
+            this.lblSerialClock = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.ipAddressControl1 = new IPAddressControlLib.IPAddressControl();
+            this.ipAddressControl2 = new IPAddressControlLib.IPAddressControl();
+            this.numCIDR = new System.Windows.Forms.NumericUpDown();
+            this.lblDTEDCE = new System.Windows.Forms.Label();
+            this.cboUseClock = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.mainCFG.SuspendLayout();
             this.grpCon.SuspendLayout();
@@ -96,6 +109,8 @@
             this.boxNewInterface.SuspendLayout();
             this.output.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCIDR)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -335,8 +350,21 @@
             // 
             // boxInterface
             // 
-            this.boxInterface.Controls.Add(this.txtNoInterfaceWarning);
+            this.boxInterface.Controls.Add(this.ipAddressControl2);
+            this.boxInterface.Controls.Add(this.cboUseClock);
             this.boxInterface.Controls.Add(this.ipAddressControl1);
+            this.boxInterface.Controls.Add(this.numCIDR);
+            this.boxInterface.Controls.Add(this.numericUpDown1);
+            this.boxInterface.Controls.Add(this.textBox2);
+            this.boxInterface.Controls.Add(this.textBox1);
+            this.boxInterface.Controls.Add(this.lblMask);
+            this.boxInterface.Controls.Add(this.lblDTEDCE);
+            this.boxInterface.Controls.Add(this.lblSerialClock);
+            this.boxInterface.Controls.Add(this.lblCIDR);
+            this.boxInterface.Controls.Add(this.lblInterface);
+            this.boxInterface.Controls.Add(this.lblIPAddress);
+            this.boxInterface.Controls.Add(this.lblName);
+            this.boxInterface.Controls.Add(this.txtNoInterfaceWarning);
             this.boxInterface.Controls.Add(this.cboInterfaces);
             this.boxInterface.Enabled = false;
             this.boxInterface.Location = new System.Drawing.Point(6, 65);
@@ -349,26 +377,11 @@
             // txtNoInterfaceWarning
             // 
             this.txtNoInterfaceWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoInterfaceWarning.Location = new System.Drawing.Point(65, 80);
+            this.txtNoInterfaceWarning.Location = new System.Drawing.Point(69, 237);
             this.txtNoInterfaceWarning.Name = "txtNoInterfaceWarning";
             this.txtNoInterfaceWarning.Size = new System.Drawing.Size(446, 31);
             this.txtNoInterfaceWarning.TabIndex = 2;
             this.txtNoInterfaceWarning.Text = "Add an interface before configuring interfaces";
-            // 
-            // ipAddressControl1
-            // 
-            this.ipAddressControl1.AllowInternalTab = false;
-            this.ipAddressControl1.AutoHeight = true;
-            this.ipAddressControl1.BackColor = System.Drawing.SystemColors.Window;
-            this.ipAddressControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ipAddressControl1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ipAddressControl1.Location = new System.Drawing.Point(7, 20);
-            this.ipAddressControl1.MinimumSize = new System.Drawing.Size(87, 20);
-            this.ipAddressControl1.Name = "ipAddressControl1";
-            this.ipAddressControl1.ReadOnly = false;
-            this.ipAddressControl1.Size = new System.Drawing.Size(87, 20);
-            this.ipAddressControl1.TabIndex = 1;
-            this.ipAddressControl1.Text = "...";
             // 
             // cboInterfaces
             // 
@@ -378,6 +391,7 @@
             this.cboInterfaces.Name = "cboInterfaces";
             this.cboInterfaces.Size = new System.Drawing.Size(178, 21);
             this.cboInterfaces.TabIndex = 0;
+            this.cboInterfaces.SelectedIndexChanged += new System.EventHandler(this.cboInterfaces_SelectedIndexChanged);
             // 
             // boxNewInterface
             // 
@@ -419,15 +433,6 @@
             this.txtNewInterfaceName.TabIndex = 1;
             this.txtNewInterfaceName.Enter += new System.EventHandler(this.txtNewInterfaceName_Enter);
             this.txtNewInterfaceName.Leave += new System.EventHandler(this.txtNewInterfaceName_Leave);
-            // 
-            // txtNewInterfaceNumber
-            // 
-            this.txtNewInterfaceNumber.Location = new System.Drawing.Point(319, 19);
-            this.txtNewInterfaceNumber.Name = "txtNewInterfaceNumber";
-            this.txtNewInterfaceNumber.Size = new System.Drawing.Size(137, 20);
-            this.txtNewInterfaceNumber.TabIndex = 1;
-            this.txtNewInterfaceNumber.Enter += new System.EventHandler(this.txtNewInterfaceNumber_Enter);
-            this.txtNewInterfaceNumber.Leave += new System.EventHandler(this.txtNewInterfaceNumber_Leave);
             // 
             // routingCFG
             // 
@@ -480,7 +485,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(607, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(607, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -496,7 +501,7 @@
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // newToolStripMenuItem
@@ -505,7 +510,7 @@
             this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.newToolStripMenuItem.Text = "&New";
             // 
             // openToolStripMenuItem
@@ -514,13 +519,13 @@
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.openToolStripMenuItem.Text = "&Open";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(152, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(143, 6);
             // 
             // saveToolStripMenuItem
             // 
@@ -528,29 +533,29 @@
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.saveAsToolStripMenuItem.Text = "Save &As";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(152, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(152, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(143, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -563,7 +568,7 @@
             this.toolStripSeparator4,
             this.selectAllToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(42, 21);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
             // cutToolStripMenuItem
@@ -572,7 +577,7 @@
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.cutToolStripMenuItem.Text = "Cu&t";
             // 
             // copyToolStripMenuItem
@@ -581,7 +586,7 @@
             this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.copyToolStripMenuItem.Text = "&Copy";
             // 
             // pasteToolStripMenuItem
@@ -590,24 +595,24 @@
             this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.pasteToolStripMenuItem.Text = "&Paste";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(141, 6);
             // 
             // selectAllToolStripMenuItem
             // 
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.selectAllToolStripMenuItem.Text = "Select &All";
             // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(52, 21);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
             // helpToolStripMenuItem
@@ -619,36 +624,36 @@
             this.toolStripSeparator5,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // contentsToolStripMenuItem
             // 
             this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.contentsToolStripMenuItem.Text = "&Contents";
             // 
             // indexToolStripMenuItem
             // 
             this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            this.indexToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.indexToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.indexToolStripMenuItem.Text = "&Index";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(124, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(119, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -656,6 +661,173 @@
             // 
             this.SaveFileDialog.Filter = "Text files (*.txt)|*.txt|XML file (*.xml)|*.xml";
             this.SaveFileDialog.FilterIndex = 0;
+            // 
+            // txtNewInterfaceNumber
+            // 
+            this.txtNewInterfaceNumber.Location = new System.Drawing.Point(319, 19);
+            this.txtNewInterfaceNumber.Name = "txtNewInterfaceNumber";
+            this.txtNewInterfaceNumber.Size = new System.Drawing.Size(137, 20);
+            this.txtNewInterfaceNumber.TabIndex = 1;
+            this.txtNewInterfaceNumber.Enter += new System.EventHandler(this.txtNewInterfaceNumber_Enter);
+            this.txtNewInterfaceNumber.Leave += new System.EventHandler(this.txtNewInterfaceNumber_Leave);
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(11, 20);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(86, 13);
+            this.lblName.TabIndex = 3;
+            this.lblName.Text = "Interface Name :";
+            // 
+            // lblIPAddress
+            // 
+            this.lblIPAddress.AutoSize = true;
+            this.lblIPAddress.Location = new System.Drawing.Point(11, 73);
+            this.lblIPAddress.Name = "lblIPAddress";
+            this.lblIPAddress.Size = new System.Drawing.Size(67, 13);
+            this.lblIPAddress.TabIndex = 4;
+            this.lblIPAddress.Text = "IP Address : ";
+            // 
+            // lblInterface
+            // 
+            this.lblInterface.AutoSize = true;
+            this.lblInterface.Location = new System.Drawing.Point(11, 48);
+            this.lblInterface.Name = "lblInterface";
+            this.lblInterface.Size = new System.Drawing.Size(58, 13);
+            this.lblInterface.TabIndex = 5;
+            this.lblInterface.Text = "Interface : ";
+            // 
+            // lblCIDR
+            // 
+            this.lblCIDR.AutoSize = true;
+            this.lblCIDR.Location = new System.Drawing.Point(11, 124);
+            this.lblCIDR.Name = "lblCIDR";
+            this.lblCIDR.Size = new System.Drawing.Size(42, 13);
+            this.lblCIDR.TabIndex = 6;
+            this.lblCIDR.Text = "CIDR : ";
+            // 
+            // lblMask
+            // 
+            this.lblMask.AutoSize = true;
+            this.lblMask.Location = new System.Drawing.Point(11, 99);
+            this.lblMask.Name = "lblMask";
+            this.lblMask.Size = new System.Drawing.Size(79, 13);
+            this.lblMask.TabIndex = 7;
+            this.lblMask.Text = "Subnet Mask : ";
+            // 
+            // lblSerialClock
+            // 
+            this.lblSerialClock.AutoSize = true;
+            this.lblSerialClock.Location = new System.Drawing.Point(11, 184);
+            this.lblSerialClock.Name = "lblSerialClock";
+            this.lblSerialClock.Size = new System.Drawing.Size(95, 13);
+            this.lblSerialClock.TabIndex = 6;
+            this.lblSerialClock.Text = "Serial ClockRate : ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(112, 17);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 8;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(112, 45);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 8;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(112, 182);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            128000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(100, 20);
+            this.numericUpDown1.TabIndex = 9;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            9600,
+            0,
+            0,
+            0});
+            // 
+            // ipAddressControl1
+            // 
+            this.ipAddressControl1.AllowInternalTab = false;
+            this.ipAddressControl1.AutoHeight = true;
+            this.ipAddressControl1.BackColor = System.Drawing.SystemColors.Window;
+            this.ipAddressControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ipAddressControl1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ipAddressControl1.Location = new System.Drawing.Point(112, 70);
+            this.ipAddressControl1.MinimumSize = new System.Drawing.Size(87, 20);
+            this.ipAddressControl1.Name = "ipAddressControl1";
+            this.ipAddressControl1.ReadOnly = false;
+            this.ipAddressControl1.Size = new System.Drawing.Size(100, 20);
+            this.ipAddressControl1.TabIndex = 10;
+            this.ipAddressControl1.Text = "...";
+            // 
+            // ipAddressControl2
+            // 
+            this.ipAddressControl2.AllowInternalTab = false;
+            this.ipAddressControl2.AutoHeight = true;
+            this.ipAddressControl2.BackColor = System.Drawing.SystemColors.Window;
+            this.ipAddressControl2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ipAddressControl2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ipAddressControl2.Location = new System.Drawing.Point(112, 96);
+            this.ipAddressControl2.MinimumSize = new System.Drawing.Size(87, 20);
+            this.ipAddressControl2.Name = "ipAddressControl2";
+            this.ipAddressControl2.ReadOnly = false;
+            this.ipAddressControl2.Size = new System.Drawing.Size(100, 20);
+            this.ipAddressControl2.TabIndex = 10;
+            this.ipAddressControl2.Text = "...";
+            // 
+            // numCIDR
+            // 
+            this.numCIDR.Location = new System.Drawing.Point(112, 124);
+            this.numCIDR.Maximum = new decimal(new int[] {
+            36,
+            0,
+            0,
+            0});
+            this.numCIDR.Name = "numCIDR";
+            this.numCIDR.Size = new System.Drawing.Size(100, 20);
+            this.numCIDR.TabIndex = 9;
+            this.numCIDR.Value = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            // 
+            // lblDTEDCE
+            // 
+            this.lblDTEDCE.AutoSize = true;
+            this.lblDTEDCE.Location = new System.Drawing.Point(11, 153);
+            this.lblDTEDCE.Name = "lblDTEDCE";
+            this.lblDTEDCE.Size = new System.Drawing.Size(62, 13);
+            this.lblDTEDCE.TabIndex = 6;
+            this.lblDTEDCE.Text = "DCE / DTE";
+            // 
+            // cboUseClock
+            // 
+            this.cboUseClock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUseClock.FormattingEnabled = true;
+            this.cboUseClock.Items.AddRange(new object[] {
+            "DCE (Master)",
+            "DTE (Slave)"});
+            this.cboUseClock.Location = new System.Drawing.Point(112, 150);
+            this.cboUseClock.Name = "cboUseClock";
+            this.cboUseClock.Size = new System.Drawing.Size(100, 21);
+            this.cboUseClock.TabIndex = 2;
             // 
             // CiscoIOSWiz
             // 
@@ -686,6 +858,8 @@
             this.output.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCIDR)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -741,13 +915,26 @@
         private System.Windows.Forms.GroupBox boxInterface;
         private System.Windows.Forms.ComboBox cboInterfaces;
         private System.Windows.Forms.RichTextBox txtOutput;
-        private IPAddressControlLib.IPAddressControl ipAddressControl1;
         private System.Windows.Forms.ComboBox cboNewInterfaceType;
-        private System.Windows.Forms.TextBox txtNewInterfaceNumber;
         private System.Windows.Forms.TextBox txtNewInterfaceName;
         private System.Windows.Forms.Button btnnewInterfaceAdd;
         private System.Windows.Forms.GroupBox boxNewInterface;
         private System.Windows.Forms.TextBox txtNoInterfaceWarning;
         private System.Windows.Forms.SaveFileDialog SaveFileDialog;
+        private System.Windows.Forms.TextBox txtNewInterfaceNumber;
+        private System.Windows.Forms.Label lblCIDR;
+        private System.Windows.Forms.Label lblInterface;
+        private System.Windows.Forms.Label lblIPAddress;
+        private System.Windows.Forms.Label lblName;
+        private IPAddressControlLib.IPAddressControl ipAddressControl2;
+        private System.Windows.Forms.ComboBox cboUseClock;
+        private IPAddressControlLib.IPAddressControl ipAddressControl1;
+        private System.Windows.Forms.NumericUpDown numCIDR;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblMask;
+        private System.Windows.Forms.Label lblDTEDCE;
+        private System.Windows.Forms.Label lblSerialClock;
     }
 }

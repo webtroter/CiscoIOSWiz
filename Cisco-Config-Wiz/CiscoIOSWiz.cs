@@ -173,7 +173,7 @@ namespace Cisco_Config_Wiz
 
         #endregion
         #region Interfaces
-
+        #region New Interface
         #region New Interface Name
         private void txtNewInterfaceName_Enter(object sender, EventArgs e)
         {
@@ -221,6 +221,10 @@ namespace Cisco_Config_Wiz
         }
         #endregion
 
+
+
+        #endregion
+
         #region UI
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -232,5 +236,10 @@ namespace Cisco_Config_Wiz
             this.Close();
         }
         #endregion
+
+        private void cboInterfaces_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

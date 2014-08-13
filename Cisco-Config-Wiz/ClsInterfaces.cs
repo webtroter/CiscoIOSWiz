@@ -65,10 +65,31 @@ namespace Cisco_Config_Wiz
             }
         }
 
+        /// <summary>
+        /// Set if the Serial Interface is DCE (Master) or DTE
+        /// If True, is DCE
+        /// </summary>
+        public bool DceDte
+        {
+            get { return DceDte; }
+            set
+            {
+                if (Type == InterfaceTypes.Serial)
+                {
+                    DceDte = value;
+                }
+            }
+        }
         public int ClockRate
         {
-            get;
-            set;
+            get { return ClockRate; }
+            set
+            {
+                if (Type == InterfaceTypes.Serial)
+                {
+                    ClockRate = value;
+                }
+            }
         }
 
         #endregion
@@ -92,7 +113,7 @@ namespace Cisco_Config_Wiz
 
         public override string ToString()
         {
-            return Name + " (" + ReturnType(Type) + Number.ToString();
+            return ReturnType(Type) + " " + Number.ToString() + "(" + Name + ")";
         }
         public string ReturnType(InterfaceTypes pType)
         {

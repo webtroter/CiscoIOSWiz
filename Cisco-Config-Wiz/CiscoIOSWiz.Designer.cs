@@ -48,13 +48,15 @@
             this.txtLogBanner = new System.Windows.Forms.TextBox();
             this.txtHostname = new System.Windows.Forms.TextBox();
             this.interCFG = new System.Windows.Forms.TabPage();
-            this.btnnewInterfaceAdd = new System.Windows.Forms.Button();
-            this.cboNewInterfaceType = new System.Windows.Forms.ComboBox();
-            this.txtNewInterfaceNumber = new System.Windows.Forms.TextBox();
-            this.txtNewInterfaceName = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.boxInterface = new System.Windows.Forms.GroupBox();
+            this.txtNoInterfaceWarning = new System.Windows.Forms.TextBox();
             this.ipAddressControl1 = new IPAddressControlLib.IPAddressControl();
             this.cboInterfaces = new System.Windows.Forms.ComboBox();
+            this.boxNewInterface = new System.Windows.Forms.GroupBox();
+            this.btnnewInterfaceAdd = new System.Windows.Forms.Button();
+            this.cboNewInterfaceType = new System.Windows.Forms.ComboBox();
+            this.txtNewInterfaceName = new System.Windows.Forms.TextBox();
+            this.txtNewInterfaceNumber = new System.Windows.Forms.TextBox();
             this.routingCFG = new System.Windows.Forms.TabPage();
             this.output = new System.Windows.Forms.TabPage();
             this.txtOutput = new System.Windows.Forms.RichTextBox();
@@ -89,7 +91,8 @@
             this.boxPassword.SuspendLayout();
             this.boxGeneral.SuspendLayout();
             this.interCFG.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.boxInterface.SuspendLayout();
+            this.boxNewInterface.SuspendLayout();
             this.output.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -319,11 +322,8 @@
             // 
             // interCFG
             // 
-            this.interCFG.Controls.Add(this.btnnewInterfaceAdd);
-            this.interCFG.Controls.Add(this.cboNewInterfaceType);
-            this.interCFG.Controls.Add(this.txtNewInterfaceNumber);
-            this.interCFG.Controls.Add(this.txtNewInterfaceName);
-            this.interCFG.Controls.Add(this.groupBox1);
+            this.interCFG.Controls.Add(this.boxInterface);
+            this.interCFG.Controls.Add(this.boxNewInterface);
             this.interCFG.Location = new System.Drawing.Point(4, 22);
             this.interCFG.Name = "interCFG";
             this.interCFG.Padding = new System.Windows.Forms.Padding(3);
@@ -332,53 +332,26 @@
             this.interCFG.Text = "Interfaces";
             this.interCFG.UseVisualStyleBackColor = true;
             // 
-            // btnnewInterfaceAdd
+            // boxInterface
             // 
-            this.btnnewInterfaceAdd.Location = new System.Drawing.Point(475, 6);
-            this.btnnewInterfaceAdd.Name = "btnnewInterfaceAdd";
-            this.btnnewInterfaceAdd.Size = new System.Drawing.Size(110, 23);
-            this.btnnewInterfaceAdd.TabIndex = 3;
-            this.btnnewInterfaceAdd.Text = "Add Interface";
-            this.btnnewInterfaceAdd.UseVisualStyleBackColor = true;
-            this.btnnewInterfaceAdd.Click += new System.EventHandler(this.btnnewInterfaceAdd_Click);
+            this.boxInterface.Controls.Add(this.txtNoInterfaceWarning);
+            this.boxInterface.Controls.Add(this.ipAddressControl1);
+            this.boxInterface.Controls.Add(this.cboInterfaces);
+            this.boxInterface.Enabled = false;
+            this.boxInterface.Location = new System.Drawing.Point(6, 65);
+            this.boxInterface.Name = "boxInterface";
+            this.boxInterface.Size = new System.Drawing.Size(585, 274);
+            this.boxInterface.TabIndex = 0;
+            this.boxInterface.TabStop = false;
+            this.boxInterface.Text = "Interface";
             // 
-            // cboNewInterfaceType
+            // txtNoInterfaceWarning
             // 
-            this.cboNewInterfaceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboNewInterfaceType.FormattingEnabled = true;
-            this.cboNewInterfaceType.Location = new System.Drawing.Point(157, 8);
-            this.cboNewInterfaceType.Name = "cboNewInterfaceType";
-            this.cboNewInterfaceType.Size = new System.Drawing.Size(169, 21);
-            this.cboNewInterfaceType.TabIndex = 2;
-            // 
-            // txtNewInterfaceNumber
-            // 
-            this.txtNewInterfaceNumber.Location = new System.Drawing.Point(332, 8);
-            this.txtNewInterfaceNumber.Name = "txtNewInterfaceNumber";
-            this.txtNewInterfaceNumber.Size = new System.Drawing.Size(137, 20);
-            this.txtNewInterfaceNumber.TabIndex = 1;
-            this.txtNewInterfaceNumber.Enter += new System.EventHandler(this.txtNewInterfaceNumber_Enter);
-            this.txtNewInterfaceNumber.Leave += new System.EventHandler(this.txtNewInterfaceNumber_Leave);
-            // 
-            // txtNewInterfaceName
-            // 
-            this.txtNewInterfaceName.Location = new System.Drawing.Point(13, 8);
-            this.txtNewInterfaceName.Name = "txtNewInterfaceName";
-            this.txtNewInterfaceName.Size = new System.Drawing.Size(138, 20);
-            this.txtNewInterfaceName.TabIndex = 1;
-            this.txtNewInterfaceName.Enter += new System.EventHandler(this.txtNewInterfaceName_Enter);
-            this.txtNewInterfaceName.Leave += new System.EventHandler(this.txtNewInterfaceName_Leave);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.ipAddressControl1);
-            this.groupBox1.Controls.Add(this.cboInterfaces);
-            this.groupBox1.Location = new System.Drawing.Point(6, 50);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(585, 289);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Interface";
+            this.txtNoInterfaceWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoInterfaceWarning.Location = new System.Drawing.Point(127, 74);
+            this.txtNoInterfaceWarning.Name = "txtNoInterfaceWarning";
+            this.txtNoInterfaceWarning.Size = new System.Drawing.Size(285, 31);
+            this.txtNoInterfaceWarning.TabIndex = 2;
             // 
             // ipAddressControl1
             // 
@@ -399,15 +372,60 @@
             // 
             this.cboInterfaces.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboInterfaces.FormattingEnabled = true;
-            this.cboInterfaces.Items.AddRange(new object[] {
-            "Fa0/0",
-            "Fa0/1",
-            "S0/0/0",
-            "S0/0/0"});
             this.cboInterfaces.Location = new System.Drawing.Point(401, 0);
             this.cboInterfaces.Name = "cboInterfaces";
             this.cboInterfaces.Size = new System.Drawing.Size(178, 21);
             this.cboInterfaces.TabIndex = 0;
+            // 
+            // boxNewInterface
+            // 
+            this.boxNewInterface.Controls.Add(this.btnnewInterfaceAdd);
+            this.boxNewInterface.Controls.Add(this.cboNewInterfaceType);
+            this.boxNewInterface.Controls.Add(this.txtNewInterfaceName);
+            this.boxNewInterface.Controls.Add(this.txtNewInterfaceNumber);
+            this.boxNewInterface.Location = new System.Drawing.Point(6, 7);
+            this.boxNewInterface.Name = "boxNewInterface";
+            this.boxNewInterface.Size = new System.Drawing.Size(585, 52);
+            this.boxNewInterface.TabIndex = 4;
+            this.boxNewInterface.TabStop = false;
+            this.boxNewInterface.Text = "New Interface";
+            // 
+            // btnnewInterfaceAdd
+            // 
+            this.btnnewInterfaceAdd.Location = new System.Drawing.Point(462, 17);
+            this.btnnewInterfaceAdd.Name = "btnnewInterfaceAdd";
+            this.btnnewInterfaceAdd.Size = new System.Drawing.Size(110, 23);
+            this.btnnewInterfaceAdd.TabIndex = 3;
+            this.btnnewInterfaceAdd.Text = "Add Interface";
+            this.btnnewInterfaceAdd.UseVisualStyleBackColor = true;
+            this.btnnewInterfaceAdd.Click += new System.EventHandler(this.btnnewInterfaceAdd_Click);
+            // 
+            // cboNewInterfaceType
+            // 
+            this.cboNewInterfaceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNewInterfaceType.FormattingEnabled = true;
+            this.cboNewInterfaceType.Location = new System.Drawing.Point(155, 19);
+            this.cboNewInterfaceType.Name = "cboNewInterfaceType";
+            this.cboNewInterfaceType.Size = new System.Drawing.Size(158, 21);
+            this.cboNewInterfaceType.TabIndex = 2;
+            // 
+            // txtNewInterfaceName
+            // 
+            this.txtNewInterfaceName.Location = new System.Drawing.Point(11, 19);
+            this.txtNewInterfaceName.Name = "txtNewInterfaceName";
+            this.txtNewInterfaceName.Size = new System.Drawing.Size(138, 20);
+            this.txtNewInterfaceName.TabIndex = 1;
+            this.txtNewInterfaceName.Enter += new System.EventHandler(this.txtNewInterfaceName_Enter);
+            this.txtNewInterfaceName.Leave += new System.EventHandler(this.txtNewInterfaceName_Leave);
+            // 
+            // txtNewInterfaceNumber
+            // 
+            this.txtNewInterfaceNumber.Location = new System.Drawing.Point(319, 19);
+            this.txtNewInterfaceNumber.Name = "txtNewInterfaceNumber";
+            this.txtNewInterfaceNumber.Size = new System.Drawing.Size(137, 20);
+            this.txtNewInterfaceNumber.TabIndex = 1;
+            this.txtNewInterfaceNumber.Enter += new System.EventHandler(this.txtNewInterfaceNumber_Enter);
+            this.txtNewInterfaceNumber.Leave += new System.EventHandler(this.txtNewInterfaceNumber_Leave);
             // 
             // routingCFG
             // 
@@ -651,8 +669,10 @@
             this.boxGeneral.ResumeLayout(false);
             this.boxGeneral.PerformLayout();
             this.interCFG.ResumeLayout(false);
-            this.interCFG.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.boxInterface.ResumeLayout(false);
+            this.boxInterface.PerformLayout();
+            this.boxNewInterface.ResumeLayout(false);
+            this.boxNewInterface.PerformLayout();
             this.output.ResumeLayout(false);
             this.output.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -709,7 +729,7 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox boxInterface;
         private System.Windows.Forms.ComboBox cboInterfaces;
         private System.Windows.Forms.RichTextBox txtOutput;
         private IPAddressControlLib.IPAddressControl ipAddressControl1;
@@ -717,6 +737,8 @@
         private System.Windows.Forms.TextBox txtNewInterfaceNumber;
         private System.Windows.Forms.TextBox txtNewInterfaceName;
         private System.Windows.Forms.Button btnnewInterfaceAdd;
+        private System.Windows.Forms.GroupBox boxNewInterface;
+        private System.Windows.Forms.TextBox txtNoInterfaceWarning;
     }
 }
 

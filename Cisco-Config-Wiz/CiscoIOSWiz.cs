@@ -217,6 +217,7 @@ namespace Cisco_Config_Wiz
             obj_ListInterfaces.Add(new clsInterfaces(txtNewInterfaceName.Text,
                 (clsInterfaces.InterfaceTypes)cboNewInterfaceType.SelectedIndex,
                 txtNewInterfaceNumber.Text));
+            cboInterfaces.Items.Add(obj_ListInterfaces[obj_ListInterfaces.Count - 1]);
         }
         #endregion
 
@@ -226,5 +227,6 @@ namespace Cisco_Config_Wiz
             new FormAbout().ShowDialog();
         }
         #endregion
+
     }
 }

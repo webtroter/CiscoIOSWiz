@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-//TODO: Add data parameter (string[]?)
+﻿//TODO: Add data parameter (string[]?)
 //TODO: Save(...) x4
 
 namespace Save
 {
     class Xml
     {
-
         public static void Save(string outputPath)
         {
             byte[] comma = { 0x2C };
@@ -118,6 +112,7 @@ namespace Save
                 byte[] nl = { 0x0D, 0x0A };
 
                 // == Exemple ==
+                //int count = FirstList.Length;
                 //for (int i = 0; i < count; i++)
                 //{
                 //    byte[] first = System.Text.Encoding.UTF8.GetBytes(FirstList[i]);
@@ -147,6 +142,7 @@ namespace Save
             byte[] nl = { 0x0D, 0x0A }; //"\r\n"
 
             // == Exemple ==
+            //int count = FirstList.Length;
             //for (int i = 0; i < FirstList.Lenght; i++)
             //{
             //    byte[] first = System.Text.Encoding.UTF8.GetBytes(FirstList[i]);

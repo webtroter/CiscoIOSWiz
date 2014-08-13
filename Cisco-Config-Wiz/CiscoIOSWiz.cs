@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Cisco_Config_Wiz
@@ -22,6 +16,7 @@ namespace Cisco_Config_Wiz
         public CiscoIOSWiz()
         {
             InitializeComponent();
+
             obj_EnPass = new clsText("Password", txtEnPass);
             obj_VTYPass = new clsText("Password", txtVTYPass);
             obj_CONPass = new clsText("Password", txtConPass);
@@ -217,7 +212,13 @@ namespace Cisco_Config_Wiz
         {
             new FormAbout().ShowDialog();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
+
 
     }
 }

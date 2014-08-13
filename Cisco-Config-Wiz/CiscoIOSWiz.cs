@@ -218,6 +218,10 @@ namespace Cisco_Config_Wiz
                 (clsInterfaces.InterfaceTypes)cboNewInterfaceType.SelectedIndex,
                 txtNewInterfaceNumber.Text));
             cboInterfaces.Items.Add(obj_ListInterfaces[obj_ListInterfaces.Count - 1]);
+            boxInterface.Enabled = true;
+            cboInterfaces.SelectedIndex = 0;
+            txtNoInterfaceWarning.Visible = false;
+
         }
         #endregion
 

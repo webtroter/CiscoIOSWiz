@@ -348,10 +348,11 @@
             // txtNoInterfaceWarning
             // 
             this.txtNoInterfaceWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoInterfaceWarning.Location = new System.Drawing.Point(127, 74);
+            this.txtNoInterfaceWarning.Location = new System.Drawing.Point(65, 80);
             this.txtNoInterfaceWarning.Name = "txtNoInterfaceWarning";
-            this.txtNoInterfaceWarning.Size = new System.Drawing.Size(285, 31);
+            this.txtNoInterfaceWarning.Size = new System.Drawing.Size(446, 31);
             this.txtNoInterfaceWarning.TabIndex = 2;
+            this.txtNoInterfaceWarning.Text = "Add an interface before configuring interfaces";
             // 
             // ipAddressControl1
             // 

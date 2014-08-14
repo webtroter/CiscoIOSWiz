@@ -63,25 +63,36 @@ namespace Cisco_Config_Wiz
             }
             set
             {
+                byte[] byteArray = new byte[4];
                 string[] tabMask = value.Split('.');
                 int compt = 0;
                 foreach (string pPart in tabMask)
                 {
-                    bool byteIsValid = false;
-                    foreach (byte pGoodByte in GOOD_MASK_VALUES)
-                    {
-                        if ((byte)int.Parse(pPart) == pGoodByte || byteIsValid)
-                        {
-                            byteIsValid = true;
-                        }
-                    }
-                    if (byteIsValid)
-                    {
-                        m_tabMaskByte[compt] = (byte)int.Parse(pPart);
-                    }
+                    byteArray[compt] = (byte)int.Parse(pPart);
                     compt++;
-                    
                 }
+                if (IsValidMask(byteArray))
+                {
+                    m_tabMaskByte = byteArray;
+                }
+                //int compt = 0;
+                //foreach (string pPart in tabMask)
+                //{
+                //    bool byteIsValid = false;
+                //    foreach (byte pGoodByte in GOOD_MASK_VALUES)
+                //    {
+                //        if ((byte)int.Parse(pPart) == pGoodByte || byteIsValid)
+                //        {
+                //            byteIsValid = true;
+                //        }
+                //    }
+                //    if (byteIsValid)
+                //    {
+                //        m_tabMaskByte[compt] = (byte)int.Parse(pPart);
+                //    }
+                //    compt++;
+                    
+                //}
             }
         }
         private int m_CIDR;
@@ -175,27 +186,64 @@ namespace Cisco_Config_Wiz
             }
             return interTypes;
         }
-        /// <summary>
-        /// Will calculate the Mask from the CIDR, or the CIDR from the Mask.
-        /// </summary>
-        /// <param name="pFromCIDR">Set to true if Mask is calculated from CIDR. False if you want to find the CIDR</param>
-        public void CalculateMaskAndCIDR(bool pFromCIDR)
+        public bool IsValidMask(byte[] pByteArray)
         {
-            Console.WriteLine("Calculating...");
-            if (pFromCIDR)
+            if (pByteArray.Length != 4)
             {
-
+                return false;
             }
-            else
+            int compt = 0;
+            foreach (byte pByte in pByteArray)
             {
-                string[] ipMask = Mask.Split('.');
-                foreach (string ipPart in ipMask)
+                foreach (byte validByte in GOOD_MASK_VALUES)
                 {
-                    Console.WriteLine(ipPart);
+                    if (pByte == validByte)
+                    {
+                        return (compt == 0 || pByteArray[compt - 1] == 255);
+                    }
                 }
             }
+            return false;
         }
+        // <summary>
+        // Will calculate the Mask from the CIDR, or the CIDR from the Mask.
+        // </summary>
+        // <param name="pFromCIDR">Set to true if Mask is calculated from CIDR. False if you want to find the CIDR</param>
+        /// <summary>
+        /// Will calculate the CIDR from the Mask, in byteArray
+        /// </summary>
+        /// <param name="pByteArray">Mask in byteArray</param>
+        /// <returns></returns>
+        public int CalculateMaskAndCIDR(byte[] pByteArray)
+        {
+            //Console.WriteLine("Calculating...");
+            //if (pFromCIDR)
+            //{
 
+            //}
+            //else
+            //{
+            //    string[] ipMask = Mask.Split('.');
+            //    foreach (string ipPart in ipMask)
+            //    {
+            //        Console.WriteLine(ipPart);
+            //    }
+            //}
+            return 0;
+        }
+        /// <summary>
+        /// Will calculate the Mask from the CIDR
+        /// </summary>
+        /// <param name="pCIDR"></param>
+        /// <returns></returns>
+        public byte[] CalculateMaskAndCIDR(int pCIDR)
+        {
+            return m_tabMaskByte;
+        }
+        public void CalculateMaskAndCIDR(bool pFrom)
+        {
+
+        }
         #endregion
     }
 }

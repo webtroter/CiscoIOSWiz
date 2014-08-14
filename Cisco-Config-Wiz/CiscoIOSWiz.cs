@@ -253,37 +253,30 @@ namespace Cisco_Config_Wiz
             int compt = 0;
             foreach (string ipPart in ipMask)
             {
-                if (ipPart == "")
+                if (ipPart != "")
                 {
-                    Console.Write('-');
+                    
+                    compt++;
+                    //Console.Write('-');
                 }
-                else compt++;
-                Console.WriteLine(ipPart);
+                //Console.WriteLine(ipPart);
                 if (compt == 4)
                 {
                     Console.WriteLine("Full MASK");
-                    obj_CurrentInterface.CalculateMaskAndCIDR(false);
-                }  
-                Console.WriteLine("=" + compt);
+                    obj_CurrentInterface.Mask = ipInterfaceMask.Text;
+                    Console.WriteLine("CIDR:" + obj_CurrentInterface.CIDRMask.ToString());
+                    Console.WriteLine("Mask:" + obj_CurrentInterface.Mask.ToString());
+                }
+                //Console.WriteLine("=" + compt);
             }
-
-            //int compt = 0;
-            //for (int curpos = 0; curpos < ipInterfaceMask.Text.Length; curpos++)
-            //{
-            //    if (ipInterfaceMask.Text[curpos] == '.' && (ipInterfaceMask.Text.Length == curpos - 1 && ipInterfaceMask.Text[curpos + 1] != '.'))
-            //    {
-            //        compt++;
-            //        if (compt == 3)
-            //        {
-            //            obj_CurrentInterface.CalculateMaskAndCIDR(false);
-            //        }
-            //    }
-            //}
         }
 
         private void numInterfaceCIDR_ValueChanged(object sender, EventArgs e)
         {
-            obj_CurrentInterface.CalculateMaskAndCIDR(true);
+            //obj_CurrentInterface.CalculateMaskAndCIDR(true);
+            obj_CurrentInterface.CIDRMask = (int)numInterfaceCIDR.Value;
+            Console.WriteLine("CIDR:" + obj_CurrentInterface.CIDRMask.ToString());
+            Console.WriteLine("Mask:" + obj_CurrentInterface.Mask.ToString());
         }
     }
 }

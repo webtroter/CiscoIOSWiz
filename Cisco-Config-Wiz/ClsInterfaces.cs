@@ -41,11 +41,35 @@ namespace Cisco_Config_Wiz
             get;
             set;
         }
-
+        string[] m_tabMask = new string[4];
+        byte[] m_tabMaskByte = new byte[4];
         public string Mask
         {
-            get;
-            set;
+            get
+            {
+                string breturn = "";
+                int compt = 0;
+                foreach (string pPart in m_tabMask)
+                {
+                    breturn += pPart;
+                    if (compt != 3)
+                    {
+                        compt++;
+                        breturn += '.';
+                    }
+                }
+                return breturn;
+            }
+            set
+            {
+                m_tabMask = value.Split('.');
+                int compt = 0;
+                foreach (string pPart in m_tabMask)
+                {
+                    m_tabMaskByte[compt] = (byte)int.Parse(pPart);
+                    compt++;
+                }
+            }
         }
         private int m_CIDR;
         public int CIDRMask

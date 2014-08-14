@@ -129,7 +129,6 @@ namespace Cisco_Config_Wiz
                     return "";
             }
         }
-
         public List<string> GetInterfaceTypes()
         {
             List<string> interTypes = new List<string>();
@@ -138,6 +137,26 @@ namespace Cisco_Config_Wiz
                 interTypes.Add(interfType.ToString());
             }
             return interTypes;
+        }
+        /// <summary>
+        /// Will calculate the Mask from the CIDR, or the CIDR from the Mask.
+        /// </summary>
+        /// <param name="pFromCIDR">Set to true if Mask is calculated from CIDR. False if you want to find the CIDR</param>
+        public void CalculateMaskAndCIDR(bool pFromCIDR)
+        {
+            Console.WriteLine("Calculating...");
+            if (pFromCIDR)
+            {
+
+            }
+            else
+            {
+                string[] ipMask = Mask.Split('.');
+                foreach (string ipPart in ipMask)
+                {
+                    Console.WriteLine(ipPart);
+                }
+            }
         }
 
         #endregion

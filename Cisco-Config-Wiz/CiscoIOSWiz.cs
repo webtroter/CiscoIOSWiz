@@ -15,6 +15,7 @@ namespace Cisco_Config_Wiz
         clsText obj_NewInterfaceName;
         clsText obj_NewInterfacenumber;
         List<clsInterfaces> obj_ListInterfaces = new List<clsInterfaces>();
+        clsInterfaces obj_CurrentInterface = null;
         public CiscoIOSWiz()
         {
             InitializeComponent();
@@ -215,11 +216,20 @@ namespace Cisco_Config_Wiz
                 txtNewInterfaceNumber.Text));
             cboInterfaces.Items.Add(obj_ListInterfaces[obj_ListInterfaces.Count - 1]);
             boxInterface.Enabled = true;
-            cboInterfaces.SelectedIndex = 0;
+            cboInterfaces.SelectedIndex = cboInterfaces.Items.Count - 1;
             txtNoInterfaceWarning.Visible = false;
 
         }
         #endregion
+
+        private void cboInterfaces_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            obj_CurrentInterface = obj_ListInterfaces[cboInterfaces.SelectedIndex];
+            txtInterfaceName.Text = obj_CurrentInterface.Name;
+            txtInterfaceTypeNum.Text = obj_CurrentInterface.ReturnType(obj_CurrentInterface.Type);
+            numInterfaceClock.Enabled = obj_CurrentInterface.Type == clsInterfaces.InterfaceTypes.Serial;
+            cboInterfaceUseClock.Enabled = obj_CurrentInterface.Type == clsInterfaces.InterfaceTypes.Serial;
+        }
 
 
 
@@ -237,9 +247,43 @@ namespace Cisco_Config_Wiz
         }
         #endregion
 
-        private void cboInterfaces_SelectedIndexChanged(object sender, EventArgs e)
+        private void ipInterfaceMask_TextChanged(object sender, EventArgs e)
         {
+            string[] ipMask = ipInterfaceMask.Text.Split('.');
+            int compt = 0;
+            foreach (string ipPart in ipMask)
+            {
+                if (ipPart == "")
+                {
+                    Console.Write('-');
+                }
+                else compt++;
+                Console.WriteLine(ipPart);
+                if (compt == 4)
+                {
+                    Console.WriteLine("Full MASK");
+                    obj_CurrentInterface.CalculateMaskAndCIDR(false);
+                }  
+                Console.WriteLine("=" + compt);
+            }
 
+            //int compt = 0;
+            //for (int curpos = 0; curpos < ipInterfaceMask.Text.Length; curpos++)
+            //{
+            //    if (ipInterfaceMask.Text[curpos] == '.' && (ipInterfaceMask.Text.Length == curpos - 1 && ipInterfaceMask.Text[curpos + 1] != '.'))
+            //    {
+            //        compt++;
+            //        if (compt == 3)
+            //        {
+            //            obj_CurrentInterface.CalculateMaskAndCIDR(false);
+            //        }
+            //    }
+            //}
+        }
+
+        private void numInterfaceCIDR_ValueChanged(object sender, EventArgs e)
+        {
+            obj_CurrentInterface.CalculateMaskAndCIDR(true);
         }
     }
 }

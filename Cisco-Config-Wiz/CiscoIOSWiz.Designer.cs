@@ -49,12 +49,27 @@
             this.txtHostname = new System.Windows.Forms.TextBox();
             this.interCFG = new System.Windows.Forms.TabPage();
             this.boxInterface = new System.Windows.Forms.GroupBox();
+            this.ipInterfaceMask = new IPAddressControlLib.IPAddressControl();
+            this.cboInterfaceUseClock = new System.Windows.Forms.ComboBox();
+            this.ipInterfaceAddress = new IPAddressControlLib.IPAddressControl();
+            this.numInterfaceCIDR = new System.Windows.Forms.NumericUpDown();
+            this.numInterfaceClock = new System.Windows.Forms.NumericUpDown();
+            this.txtInterfaceTypeNum = new System.Windows.Forms.TextBox();
+            this.txtInterfaceName = new System.Windows.Forms.TextBox();
+            this.lblMask = new System.Windows.Forms.Label();
+            this.lblDTEDCE = new System.Windows.Forms.Label();
+            this.lblSerialClock = new System.Windows.Forms.Label();
+            this.lblCIDR = new System.Windows.Forms.Label();
+            this.lblInterface = new System.Windows.Forms.Label();
+            this.lblIPAddress = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.txtNoInterfaceWarning = new System.Windows.Forms.TextBox();
             this.cboInterfaces = new System.Windows.Forms.ComboBox();
             this.boxNewInterface = new System.Windows.Forms.GroupBox();
             this.btnnewInterfaceAdd = new System.Windows.Forms.Button();
             this.cboNewInterfaceType = new System.Windows.Forms.ComboBox();
             this.txtNewInterfaceName = new System.Windows.Forms.TextBox();
+            this.txtNewInterfaceNumber = new System.Windows.Forms.TextBox();
             this.routingCFG = new System.Windows.Forms.TabPage();
             this.output = new System.Windows.Forms.TabPage();
             this.txtOutput = new System.Windows.Forms.RichTextBox();
@@ -83,21 +98,6 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.txtNewInterfaceNumber = new System.Windows.Forms.TextBox();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblIPAddress = new System.Windows.Forms.Label();
-            this.lblInterface = new System.Windows.Forms.Label();
-            this.lblCIDR = new System.Windows.Forms.Label();
-            this.lblMask = new System.Windows.Forms.Label();
-            this.lblSerialClock = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.ipAddressControl1 = new IPAddressControlLib.IPAddressControl();
-            this.ipAddressControl2 = new IPAddressControlLib.IPAddressControl();
-            this.numCIDR = new System.Windows.Forms.NumericUpDown();
-            this.lblDTEDCE = new System.Windows.Forms.Label();
-            this.cboUseClock = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.mainCFG.SuspendLayout();
             this.grpCon.SuspendLayout();
@@ -106,11 +106,11 @@
             this.boxGeneral.SuspendLayout();
             this.interCFG.SuspendLayout();
             this.boxInterface.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numInterfaceCIDR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numInterfaceClock)).BeginInit();
             this.boxNewInterface.SuspendLayout();
             this.output.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numCIDR)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -350,13 +350,13 @@
             // 
             // boxInterface
             // 
-            this.boxInterface.Controls.Add(this.ipAddressControl2);
-            this.boxInterface.Controls.Add(this.cboUseClock);
-            this.boxInterface.Controls.Add(this.ipAddressControl1);
-            this.boxInterface.Controls.Add(this.numCIDR);
-            this.boxInterface.Controls.Add(this.numericUpDown1);
-            this.boxInterface.Controls.Add(this.textBox2);
-            this.boxInterface.Controls.Add(this.textBox1);
+            this.boxInterface.Controls.Add(this.ipInterfaceMask);
+            this.boxInterface.Controls.Add(this.cboInterfaceUseClock);
+            this.boxInterface.Controls.Add(this.ipInterfaceAddress);
+            this.boxInterface.Controls.Add(this.numInterfaceCIDR);
+            this.boxInterface.Controls.Add(this.numInterfaceClock);
+            this.boxInterface.Controls.Add(this.txtInterfaceTypeNum);
+            this.boxInterface.Controls.Add(this.txtInterfaceName);
             this.boxInterface.Controls.Add(this.lblMask);
             this.boxInterface.Controls.Add(this.lblDTEDCE);
             this.boxInterface.Controls.Add(this.lblSerialClock);
@@ -373,6 +373,168 @@
             this.boxInterface.TabIndex = 0;
             this.boxInterface.TabStop = false;
             this.boxInterface.Text = "Interface";
+            // 
+            // ipInterfaceMask
+            // 
+            this.ipInterfaceMask.AllowInternalTab = false;
+            this.ipInterfaceMask.AutoHeight = true;
+            this.ipInterfaceMask.BackColor = System.Drawing.SystemColors.Window;
+            this.ipInterfaceMask.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ipInterfaceMask.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ipInterfaceMask.Location = new System.Drawing.Point(112, 96);
+            this.ipInterfaceMask.MinimumSize = new System.Drawing.Size(87, 20);
+            this.ipInterfaceMask.Name = "ipInterfaceMask";
+            this.ipInterfaceMask.ReadOnly = false;
+            this.ipInterfaceMask.Size = new System.Drawing.Size(100, 20);
+            this.ipInterfaceMask.TabIndex = 10;
+            this.ipInterfaceMask.Text = "...";
+            this.ipInterfaceMask.TextChanged += new System.EventHandler(this.ipInterfaceMask_TextChanged);
+            // 
+            // cboInterfaceUseClock
+            // 
+            this.cboInterfaceUseClock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboInterfaceUseClock.FormattingEnabled = true;
+            this.cboInterfaceUseClock.Items.AddRange(new object[] {
+            "DCE (Master)",
+            "DTE (Slave)"});
+            this.cboInterfaceUseClock.Location = new System.Drawing.Point(112, 150);
+            this.cboInterfaceUseClock.Name = "cboInterfaceUseClock";
+            this.cboInterfaceUseClock.Size = new System.Drawing.Size(100, 21);
+            this.cboInterfaceUseClock.TabIndex = 2;
+            // 
+            // ipInterfaceAddress
+            // 
+            this.ipInterfaceAddress.AllowInternalTab = false;
+            this.ipInterfaceAddress.AutoHeight = true;
+            this.ipInterfaceAddress.BackColor = System.Drawing.SystemColors.Window;
+            this.ipInterfaceAddress.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ipInterfaceAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ipInterfaceAddress.Location = new System.Drawing.Point(112, 70);
+            this.ipInterfaceAddress.MinimumSize = new System.Drawing.Size(87, 20);
+            this.ipInterfaceAddress.Name = "ipInterfaceAddress";
+            this.ipInterfaceAddress.ReadOnly = false;
+            this.ipInterfaceAddress.Size = new System.Drawing.Size(100, 20);
+            this.ipInterfaceAddress.TabIndex = 10;
+            this.ipInterfaceAddress.Text = "...";
+            // 
+            // numInterfaceCIDR
+            // 
+            this.numInterfaceCIDR.Location = new System.Drawing.Point(112, 124);
+            this.numInterfaceCIDR.Maximum = new decimal(new int[] {
+            36,
+            0,
+            0,
+            0});
+            this.numInterfaceCIDR.Name = "numInterfaceCIDR";
+            this.numInterfaceCIDR.Size = new System.Drawing.Size(100, 20);
+            this.numInterfaceCIDR.TabIndex = 9;
+            this.numInterfaceCIDR.Value = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.numInterfaceCIDR.ValueChanged += new System.EventHandler(this.numInterfaceCIDR_ValueChanged);
+            // 
+            // numInterfaceClock
+            // 
+            this.numInterfaceClock.Location = new System.Drawing.Point(112, 182);
+            this.numInterfaceClock.Maximum = new decimal(new int[] {
+            128000,
+            0,
+            0,
+            0});
+            this.numInterfaceClock.Minimum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numInterfaceClock.Name = "numInterfaceClock";
+            this.numInterfaceClock.Size = new System.Drawing.Size(100, 20);
+            this.numInterfaceClock.TabIndex = 9;
+            this.numInterfaceClock.Value = new decimal(new int[] {
+            9600,
+            0,
+            0,
+            0});
+            // 
+            // txtInterfaceTypeNum
+            // 
+            this.txtInterfaceTypeNum.Location = new System.Drawing.Point(112, 45);
+            this.txtInterfaceTypeNum.Name = "txtInterfaceTypeNum";
+            this.txtInterfaceTypeNum.ReadOnly = true;
+            this.txtInterfaceTypeNum.Size = new System.Drawing.Size(100, 20);
+            this.txtInterfaceTypeNum.TabIndex = 8;
+            // 
+            // txtInterfaceName
+            // 
+            this.txtInterfaceName.Location = new System.Drawing.Point(112, 17);
+            this.txtInterfaceName.Name = "txtInterfaceName";
+            this.txtInterfaceName.ReadOnly = true;
+            this.txtInterfaceName.Size = new System.Drawing.Size(100, 20);
+            this.txtInterfaceName.TabIndex = 8;
+            // 
+            // lblMask
+            // 
+            this.lblMask.AutoSize = true;
+            this.lblMask.Location = new System.Drawing.Point(11, 99);
+            this.lblMask.Name = "lblMask";
+            this.lblMask.Size = new System.Drawing.Size(79, 13);
+            this.lblMask.TabIndex = 7;
+            this.lblMask.Text = "Subnet Mask : ";
+            // 
+            // lblDTEDCE
+            // 
+            this.lblDTEDCE.AutoSize = true;
+            this.lblDTEDCE.Location = new System.Drawing.Point(11, 153);
+            this.lblDTEDCE.Name = "lblDTEDCE";
+            this.lblDTEDCE.Size = new System.Drawing.Size(62, 13);
+            this.lblDTEDCE.TabIndex = 6;
+            this.lblDTEDCE.Text = "DCE / DTE";
+            // 
+            // lblSerialClock
+            // 
+            this.lblSerialClock.AutoSize = true;
+            this.lblSerialClock.Location = new System.Drawing.Point(11, 184);
+            this.lblSerialClock.Name = "lblSerialClock";
+            this.lblSerialClock.Size = new System.Drawing.Size(95, 13);
+            this.lblSerialClock.TabIndex = 6;
+            this.lblSerialClock.Text = "Serial ClockRate : ";
+            // 
+            // lblCIDR
+            // 
+            this.lblCIDR.AutoSize = true;
+            this.lblCIDR.Location = new System.Drawing.Point(11, 124);
+            this.lblCIDR.Name = "lblCIDR";
+            this.lblCIDR.Size = new System.Drawing.Size(42, 13);
+            this.lblCIDR.TabIndex = 6;
+            this.lblCIDR.Text = "CIDR : ";
+            // 
+            // lblInterface
+            // 
+            this.lblInterface.AutoSize = true;
+            this.lblInterface.Location = new System.Drawing.Point(11, 48);
+            this.lblInterface.Name = "lblInterface";
+            this.lblInterface.Size = new System.Drawing.Size(58, 13);
+            this.lblInterface.TabIndex = 5;
+            this.lblInterface.Text = "Interface : ";
+            // 
+            // lblIPAddress
+            // 
+            this.lblIPAddress.AutoSize = true;
+            this.lblIPAddress.Location = new System.Drawing.Point(11, 73);
+            this.lblIPAddress.Name = "lblIPAddress";
+            this.lblIPAddress.Size = new System.Drawing.Size(67, 13);
+            this.lblIPAddress.TabIndex = 4;
+            this.lblIPAddress.Text = "IP Address : ";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(11, 20);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(86, 13);
+            this.lblName.TabIndex = 3;
+            this.lblName.Text = "Interface Name :";
             // 
             // txtNoInterfaceWarning
             // 
@@ -433,6 +595,15 @@
             this.txtNewInterfaceName.TabIndex = 1;
             this.txtNewInterfaceName.Enter += new System.EventHandler(this.txtNewInterfaceName_Enter);
             this.txtNewInterfaceName.Leave += new System.EventHandler(this.txtNewInterfaceName_Leave);
+            // 
+            // txtNewInterfaceNumber
+            // 
+            this.txtNewInterfaceNumber.Location = new System.Drawing.Point(319, 19);
+            this.txtNewInterfaceNumber.Name = "txtNewInterfaceNumber";
+            this.txtNewInterfaceNumber.Size = new System.Drawing.Size(137, 20);
+            this.txtNewInterfaceNumber.TabIndex = 1;
+            this.txtNewInterfaceNumber.Enter += new System.EventHandler(this.txtNewInterfaceNumber_Enter);
+            this.txtNewInterfaceNumber.Leave += new System.EventHandler(this.txtNewInterfaceNumber_Leave);
             // 
             // routingCFG
             // 
@@ -662,173 +833,6 @@
             this.SaveFileDialog.Filter = "Text files (*.txt)|*.txt|XML file (*.xml)|*.xml";
             this.SaveFileDialog.FilterIndex = 0;
             // 
-            // txtNewInterfaceNumber
-            // 
-            this.txtNewInterfaceNumber.Location = new System.Drawing.Point(319, 19);
-            this.txtNewInterfaceNumber.Name = "txtNewInterfaceNumber";
-            this.txtNewInterfaceNumber.Size = new System.Drawing.Size(137, 20);
-            this.txtNewInterfaceNumber.TabIndex = 1;
-            this.txtNewInterfaceNumber.Enter += new System.EventHandler(this.txtNewInterfaceNumber_Enter);
-            this.txtNewInterfaceNumber.Leave += new System.EventHandler(this.txtNewInterfaceNumber_Leave);
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(11, 20);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(86, 13);
-            this.lblName.TabIndex = 3;
-            this.lblName.Text = "Interface Name :";
-            // 
-            // lblIPAddress
-            // 
-            this.lblIPAddress.AutoSize = true;
-            this.lblIPAddress.Location = new System.Drawing.Point(11, 73);
-            this.lblIPAddress.Name = "lblIPAddress";
-            this.lblIPAddress.Size = new System.Drawing.Size(67, 13);
-            this.lblIPAddress.TabIndex = 4;
-            this.lblIPAddress.Text = "IP Address : ";
-            // 
-            // lblInterface
-            // 
-            this.lblInterface.AutoSize = true;
-            this.lblInterface.Location = new System.Drawing.Point(11, 48);
-            this.lblInterface.Name = "lblInterface";
-            this.lblInterface.Size = new System.Drawing.Size(58, 13);
-            this.lblInterface.TabIndex = 5;
-            this.lblInterface.Text = "Interface : ";
-            // 
-            // lblCIDR
-            // 
-            this.lblCIDR.AutoSize = true;
-            this.lblCIDR.Location = new System.Drawing.Point(11, 124);
-            this.lblCIDR.Name = "lblCIDR";
-            this.lblCIDR.Size = new System.Drawing.Size(42, 13);
-            this.lblCIDR.TabIndex = 6;
-            this.lblCIDR.Text = "CIDR : ";
-            // 
-            // lblMask
-            // 
-            this.lblMask.AutoSize = true;
-            this.lblMask.Location = new System.Drawing.Point(11, 99);
-            this.lblMask.Name = "lblMask";
-            this.lblMask.Size = new System.Drawing.Size(79, 13);
-            this.lblMask.TabIndex = 7;
-            this.lblMask.Text = "Subnet Mask : ";
-            // 
-            // lblSerialClock
-            // 
-            this.lblSerialClock.AutoSize = true;
-            this.lblSerialClock.Location = new System.Drawing.Point(11, 184);
-            this.lblSerialClock.Name = "lblSerialClock";
-            this.lblSerialClock.Size = new System.Drawing.Size(95, 13);
-            this.lblSerialClock.TabIndex = 6;
-            this.lblSerialClock.Text = "Serial ClockRate : ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(112, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 8;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(112, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 8;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(112, 182);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            128000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown1.TabIndex = 9;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            9600,
-            0,
-            0,
-            0});
-            // 
-            // ipAddressControl1
-            // 
-            this.ipAddressControl1.AllowInternalTab = false;
-            this.ipAddressControl1.AutoHeight = true;
-            this.ipAddressControl1.BackColor = System.Drawing.SystemColors.Window;
-            this.ipAddressControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ipAddressControl1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ipAddressControl1.Location = new System.Drawing.Point(112, 70);
-            this.ipAddressControl1.MinimumSize = new System.Drawing.Size(87, 20);
-            this.ipAddressControl1.Name = "ipAddressControl1";
-            this.ipAddressControl1.ReadOnly = false;
-            this.ipAddressControl1.Size = new System.Drawing.Size(100, 20);
-            this.ipAddressControl1.TabIndex = 10;
-            this.ipAddressControl1.Text = "...";
-            // 
-            // ipAddressControl2
-            // 
-            this.ipAddressControl2.AllowInternalTab = false;
-            this.ipAddressControl2.AutoHeight = true;
-            this.ipAddressControl2.BackColor = System.Drawing.SystemColors.Window;
-            this.ipAddressControl2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ipAddressControl2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ipAddressControl2.Location = new System.Drawing.Point(112, 96);
-            this.ipAddressControl2.MinimumSize = new System.Drawing.Size(87, 20);
-            this.ipAddressControl2.Name = "ipAddressControl2";
-            this.ipAddressControl2.ReadOnly = false;
-            this.ipAddressControl2.Size = new System.Drawing.Size(100, 20);
-            this.ipAddressControl2.TabIndex = 10;
-            this.ipAddressControl2.Text = "...";
-            // 
-            // numCIDR
-            // 
-            this.numCIDR.Location = new System.Drawing.Point(112, 124);
-            this.numCIDR.Maximum = new decimal(new int[] {
-            36,
-            0,
-            0,
-            0});
-            this.numCIDR.Name = "numCIDR";
-            this.numCIDR.Size = new System.Drawing.Size(100, 20);
-            this.numCIDR.TabIndex = 9;
-            this.numCIDR.Value = new decimal(new int[] {
-            24,
-            0,
-            0,
-            0});
-            // 
-            // lblDTEDCE
-            // 
-            this.lblDTEDCE.AutoSize = true;
-            this.lblDTEDCE.Location = new System.Drawing.Point(11, 153);
-            this.lblDTEDCE.Name = "lblDTEDCE";
-            this.lblDTEDCE.Size = new System.Drawing.Size(62, 13);
-            this.lblDTEDCE.TabIndex = 6;
-            this.lblDTEDCE.Text = "DCE / DTE";
-            // 
-            // cboUseClock
-            // 
-            this.cboUseClock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboUseClock.FormattingEnabled = true;
-            this.cboUseClock.Items.AddRange(new object[] {
-            "DCE (Master)",
-            "DTE (Slave)"});
-            this.cboUseClock.Location = new System.Drawing.Point(112, 150);
-            this.cboUseClock.Name = "cboUseClock";
-            this.cboUseClock.Size = new System.Drawing.Size(100, 21);
-            this.cboUseClock.TabIndex = 2;
-            // 
             // CiscoIOSWiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -852,14 +856,14 @@
             this.interCFG.ResumeLayout(false);
             this.boxInterface.ResumeLayout(false);
             this.boxInterface.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numInterfaceCIDR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numInterfaceClock)).EndInit();
             this.boxNewInterface.ResumeLayout(false);
             this.boxNewInterface.PerformLayout();
             this.output.ResumeLayout(false);
             this.output.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numCIDR)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -926,13 +930,13 @@
         private System.Windows.Forms.Label lblInterface;
         private System.Windows.Forms.Label lblIPAddress;
         private System.Windows.Forms.Label lblName;
-        private IPAddressControlLib.IPAddressControl ipAddressControl2;
-        private System.Windows.Forms.ComboBox cboUseClock;
-        private IPAddressControlLib.IPAddressControl ipAddressControl1;
-        private System.Windows.Forms.NumericUpDown numCIDR;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private IPAddressControlLib.IPAddressControl ipInterfaceMask;
+        private System.Windows.Forms.ComboBox cboInterfaceUseClock;
+        private IPAddressControlLib.IPAddressControl ipInterfaceAddress;
+        private System.Windows.Forms.NumericUpDown numInterfaceCIDR;
+        private System.Windows.Forms.NumericUpDown numInterfaceClock;
+        private System.Windows.Forms.TextBox txtInterfaceTypeNum;
+        private System.Windows.Forms.TextBox txtInterfaceName;
         private System.Windows.Forms.Label lblMask;
         private System.Windows.Forms.Label lblDTEDCE;
         private System.Windows.Forms.Label lblSerialClock;

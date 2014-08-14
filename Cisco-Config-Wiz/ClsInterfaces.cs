@@ -41,7 +41,7 @@ namespace Cisco_Config_Wiz
             get;
             set;
         }
-        string[] m_tabMask = new string[4];
+        //string[] m_tabMask = new string[4];
         byte[] m_tabMaskByte = new byte[4];
         public string Mask
         {
@@ -49,9 +49,9 @@ namespace Cisco_Config_Wiz
             {
                 string breturn = "";
                 int compt = 0;
-                foreach (string pPart in m_tabMask)
+                foreach (byte pPart in m_tabMaskByte)
                 {
-                    breturn += pPart;
+                    breturn += ((int)pPart).ToString();
                     if (compt != 3)
                     {
                         compt++;
@@ -62,9 +62,9 @@ namespace Cisco_Config_Wiz
             }
             set
             {
-                m_tabMask = value.Split('.');
+                string[] tabMask = value.Split('.');
                 int compt = 0;
-                foreach (string pPart in m_tabMask)
+                foreach (string pPart in tabMask)
                 {
                     m_tabMaskByte[compt] = (byte)int.Parse(pPart);
                     compt++;

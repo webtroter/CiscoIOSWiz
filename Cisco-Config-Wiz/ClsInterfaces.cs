@@ -10,6 +10,7 @@ namespace Cisco_Config_Wiz
         #region Constantes, variables et propriétés
 
         const int MAX_CIDR_MASK = 32;
+        byte[] GOOD_MASK_VALUES = { 255, 254, 252, 248, 240, 224, 192, 128, 0};
 
         public string Name
         {
@@ -51,7 +52,7 @@ namespace Cisco_Config_Wiz
                 int compt = 0;
                 foreach (byte pPart in m_tabMaskByte)
                 {
-                    breturn += ((int)pPart).ToString();
+                    breturn += pPart.ToString();
                     if (compt != 3)
                     {
                         compt++;
@@ -66,8 +67,20 @@ namespace Cisco_Config_Wiz
                 int compt = 0;
                 foreach (string pPart in tabMask)
                 {
-                    m_tabMaskByte[compt] = (byte)int.Parse(pPart);
+                    bool byteIsValid = false;
+                    foreach (byte pGoodByte in GOOD_MASK_VALUES)
+                    {
+                        if ((byte)int.Parse(pPart) == pGoodByte || byteIsValid)
+                        {
+                            byteIsValid = true;
+                        }
+                    }
+                    if (byteIsValid)
+                    {
+                        m_tabMaskByte[compt] = (byte)int.Parse(pPart);
+                    }
                     compt++;
+                    
                 }
             }
         }

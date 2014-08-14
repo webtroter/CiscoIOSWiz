@@ -1,0 +1,10 @@
+DID : 	La boite MASK vérifie que le masque est complètement entré avant d'appeler la méthode clsInterface.CalaculaMaskAndCIDR.
+
+TODO : 	Cette méthode est à compléter. 
+	Je pensais faire ça avec des conversions.
+	Au niveau Masque->CIDR:
+	-D'abord, du string[] vers un int[].
+	-Puis, il faut voir avec lequel ça serait le plus simple. Il faut que le masque en décimal soit que des 1 suivis que par des 0.
+		En hexa ou en bin.
+	CIDR -> Masque:
+	Plus simple celui là, y'a pas de vérification à faire.

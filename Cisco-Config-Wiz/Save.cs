@@ -7,6 +7,8 @@ namespace Save
     {
         public static void Save(string outputPath)
         {
+            throw new System.NotImplementedException("Save(String)");
+
             byte[] comma = { 0x2C };
             byte[] nl = { 0x0D, 0x0A };
 
@@ -55,6 +57,8 @@ namespace Save
 
         public static void Save(System.IO.Stream stream)
         {
+            throw new System.NotImplementedException("Save(Stream)");
+
             byte[] comma = { 0x2C };
             byte[] nl = { 0x0D, 0x0A };
 
@@ -108,6 +112,8 @@ namespace Save
         {
             using (System.IO.FileStream fs = new System.IO.FileStream(outputPath, System.IO.FileMode.Create))
             {
+                throw new System.NotImplementedException("Save(String)");
+
                 byte[] comma = { 0x2C };
                 byte[] nl = { 0x0D, 0x0A };
 
@@ -138,6 +144,8 @@ namespace Save
 
         public static void Save(System.IO.Stream stream)
         {
+            throw new System.NotImplementedException("Save(String)");
+
             byte[] comma = { 0x2C }; //','
             byte[] nl = { 0x0D, 0x0A }; //"\r\n"
 

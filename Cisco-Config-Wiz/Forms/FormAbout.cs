@@ -10,6 +10,8 @@ namespace Cisco_Config_Wiz
 {
     partial class FormAbout : Form
     {
+        protected readonly string nl = System.Environment.NewLine;
+
         public FormAbout()
         {
             InitializeComponent();
@@ -18,7 +20,8 @@ namespace Cisco_Config_Wiz
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            this.textBoxDescription.Text = AssemblyDescription + nl +
+                ""; //CHECK: :V
         }
 
         #region Accesseurs d'attribut de l'assembly

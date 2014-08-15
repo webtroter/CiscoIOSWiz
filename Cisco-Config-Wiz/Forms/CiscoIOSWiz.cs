@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
+//TODO: FormDNS
+//TODO: FormPing
+//Le pire c'est que j'ai déjà ces deux formes là de faites (de NetNet, un de mes programmes), mais les importer n'est pas très facile. J'ai essayé.
+
 namespace Cisco_Config_Wiz
 {
     public partial class CiscoIOSWiz : Form
     {
+        protected internal readonly string nl = System.Environment.NewLine;
+
         clsText obj_EnPass;
         clsText obj_VTYPass;
         clsText obj_CONPass;
@@ -33,6 +39,9 @@ namespace Cisco_Config_Wiz
                 cboNewInterfaceType.Items.Add(interfType.ToString());
             }
             cboNewInterfaceType.SelectedItem = cboNewInterfaceType.Items[0];
+
+            //DEBUG
+            txtOutput.AppendText("c68034f9fb64a322c66a8e07b40526622c470b2ba14f1a6edf2a56a278cc354b" + nl);
         }
         #region General Conf
         #region Constants
@@ -236,14 +245,37 @@ namespace Cisco_Config_Wiz
         #endregion
 
         #region UI
+        //ABOUT
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FormAbout().ShowDialog();
         }
 
+        //EXIT
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        //HELP
+        private void contentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Si la forme demandé est présente et non null..
+            if (System.Windows.Forms.Application.OpenForms["FormHelp"] as FormHelp == null)
+            {
+                //Affiche la
+                new FormHelp().Show(); //Show() masterrace
+            }
+            else
+                //Aussi non active la et donne lui le focus.
+                Application.OpenForms["FormHelp"].Activate();
+        }
+
+        //SELECT ALL
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabOutput;
+            txtOutput.SelectAll();
         }
         #endregion
 

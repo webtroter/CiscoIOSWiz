@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CiscoIOSWiz));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.mainCFG = new System.Windows.Forms.TabPage();
+            this.tabMain = new System.Windows.Forms.TabPage();
             this.grpCon = new System.Windows.Forms.GroupBox();
             this.txtConPass = new System.Windows.Forms.TextBox();
             this.chkConLogSync = new System.Windows.Forms.CheckBox();
@@ -47,7 +47,7 @@
             this.txtMotdBanner = new System.Windows.Forms.TextBox();
             this.txtLogBanner = new System.Windows.Forms.TextBox();
             this.txtHostname = new System.Windows.Forms.TextBox();
-            this.interCFG = new System.Windows.Forms.TabPage();
+            this.tabInterfaces = new System.Windows.Forms.TabPage();
             this.boxInterface = new System.Windows.Forms.GroupBox();
             this.ipInterfaceMask = new IPAddressControlLib.IPAddressControl();
             this.cboInterfaceUseClock = new System.Windows.Forms.ComboBox();
@@ -70,8 +70,8 @@
             this.cboNewInterfaceType = new System.Windows.Forms.ComboBox();
             this.txtNewInterfaceName = new System.Windows.Forms.TextBox();
             this.txtNewInterfaceNumber = new System.Windows.Forms.TextBox();
-            this.routingCFG = new System.Windows.Forms.TabPage();
-            this.output = new System.Windows.Forms.TabPage();
+            this.tabRouting = new System.Windows.Forms.TabPage();
+            this.tabOutput = new System.Windows.Forms.TabPage();
             this.txtOutput = new System.Windows.Forms.RichTextBox();
             this.lblOutput = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -99,17 +99,17 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.tabControl1.SuspendLayout();
-            this.mainCFG.SuspendLayout();
+            this.tabMain.SuspendLayout();
             this.grpCon.SuspendLayout();
             this.boxVTY.SuspendLayout();
             this.boxPassword.SuspendLayout();
             this.boxGeneral.SuspendLayout();
-            this.interCFG.SuspendLayout();
+            this.tabInterfaces.SuspendLayout();
             this.boxInterface.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numInterfaceCIDR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numInterfaceClock)).BeginInit();
             this.boxNewInterface.SuspendLayout();
-            this.output.SuspendLayout();
+            this.tabOutput.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,29 +118,29 @@
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.mainCFG);
-            this.tabControl1.Controls.Add(this.interCFG);
-            this.tabControl1.Controls.Add(this.routingCFG);
-            this.tabControl1.Controls.Add(this.output);
+            this.tabControl1.Controls.Add(this.tabMain);
+            this.tabControl1.Controls.Add(this.tabInterfaces);
+            this.tabControl1.Controls.Add(this.tabRouting);
+            this.tabControl1.Controls.Add(this.tabOutput);
             this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(607, 376);
             this.tabControl1.TabIndex = 0;
             // 
-            // mainCFG
+            // tabMain
             // 
-            this.mainCFG.Controls.Add(this.grpCon);
-            this.mainCFG.Controls.Add(this.boxVTY);
-            this.mainCFG.Controls.Add(this.boxPassword);
-            this.mainCFG.Controls.Add(this.boxGeneral);
-            this.mainCFG.Location = new System.Drawing.Point(4, 22);
-            this.mainCFG.Name = "mainCFG";
-            this.mainCFG.Padding = new System.Windows.Forms.Padding(3);
-            this.mainCFG.Size = new System.Drawing.Size(599, 350);
-            this.mainCFG.TabIndex = 0;
-            this.mainCFG.Text = "General Configuration";
-            this.mainCFG.UseVisualStyleBackColor = true;
+            this.tabMain.Controls.Add(this.grpCon);
+            this.tabMain.Controls.Add(this.boxVTY);
+            this.tabMain.Controls.Add(this.boxPassword);
+            this.tabMain.Controls.Add(this.boxGeneral);
+            this.tabMain.Location = new System.Drawing.Point(4, 22);
+            this.tabMain.Name = "tabMain";
+            this.tabMain.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMain.Size = new System.Drawing.Size(599, 350);
+            this.tabMain.TabIndex = 0;
+            this.tabMain.Text = "General Configuration";
+            this.tabMain.UseVisualStyleBackColor = true;
             // 
             // grpCon
             // 
@@ -336,17 +336,17 @@
             this.txtHostname.Enter += new System.EventHandler(this.txtHostname_Enter);
             this.txtHostname.Leave += new System.EventHandler(this.txtHostname_Leave);
             // 
-            // interCFG
+            // tabInterfaces
             // 
-            this.interCFG.Controls.Add(this.boxInterface);
-            this.interCFG.Controls.Add(this.boxNewInterface);
-            this.interCFG.Location = new System.Drawing.Point(4, 22);
-            this.interCFG.Name = "interCFG";
-            this.interCFG.Padding = new System.Windows.Forms.Padding(3);
-            this.interCFG.Size = new System.Drawing.Size(599, 350);
-            this.interCFG.TabIndex = 1;
-            this.interCFG.Text = "Interfaces";
-            this.interCFG.UseVisualStyleBackColor = true;
+            this.tabInterfaces.Controls.Add(this.boxInterface);
+            this.tabInterfaces.Controls.Add(this.boxNewInterface);
+            this.tabInterfaces.Location = new System.Drawing.Point(4, 22);
+            this.tabInterfaces.Name = "tabInterfaces";
+            this.tabInterfaces.Padding = new System.Windows.Forms.Padding(3);
+            this.tabInterfaces.Size = new System.Drawing.Size(599, 350);
+            this.tabInterfaces.TabIndex = 1;
+            this.tabInterfaces.Text = "Interfaces";
+            this.tabInterfaces.UseVisualStyleBackColor = true;
             // 
             // boxInterface
             // 
@@ -605,25 +605,25 @@
             this.txtNewInterfaceNumber.Enter += new System.EventHandler(this.txtNewInterfaceNumber_Enter);
             this.txtNewInterfaceNumber.Leave += new System.EventHandler(this.txtNewInterfaceNumber_Leave);
             // 
-            // routingCFG
+            // tabRouting
             // 
-            this.routingCFG.Location = new System.Drawing.Point(4, 22);
-            this.routingCFG.Name = "routingCFG";
-            this.routingCFG.Size = new System.Drawing.Size(599, 350);
-            this.routingCFG.TabIndex = 3;
-            this.routingCFG.Text = "Routing";
-            this.routingCFG.UseVisualStyleBackColor = true;
+            this.tabRouting.Location = new System.Drawing.Point(4, 22);
+            this.tabRouting.Name = "tabRouting";
+            this.tabRouting.Size = new System.Drawing.Size(599, 350);
+            this.tabRouting.TabIndex = 3;
+            this.tabRouting.Text = "Routing";
+            this.tabRouting.UseVisualStyleBackColor = true;
             // 
-            // output
+            // tabOutput
             // 
-            this.output.Controls.Add(this.txtOutput);
-            this.output.Controls.Add(this.lblOutput);
-            this.output.Location = new System.Drawing.Point(4, 22);
-            this.output.Name = "output";
-            this.output.Size = new System.Drawing.Size(599, 350);
-            this.output.TabIndex = 2;
-            this.output.Text = "Output";
-            this.output.UseVisualStyleBackColor = true;
+            this.tabOutput.Controls.Add(this.txtOutput);
+            this.tabOutput.Controls.Add(this.lblOutput);
+            this.tabOutput.Location = new System.Drawing.Point(4, 22);
+            this.tabOutput.Name = "tabOutput";
+            this.tabOutput.Size = new System.Drawing.Size(599, 350);
+            this.tabOutput.TabIndex = 2;
+            this.tabOutput.Text = "Output";
+            this.tabOutput.UseVisualStyleBackColor = true;
             // 
             // txtOutput
             // 
@@ -656,7 +656,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(607, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(607, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -672,7 +672,7 @@
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // newToolStripMenuItem
@@ -681,7 +681,7 @@
             this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.newToolStripMenuItem.Text = "&New";
             // 
             // openToolStripMenuItem
@@ -690,13 +690,13 @@
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.openToolStripMenuItem.Text = "&Open";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(152, 6);
             // 
             // saveToolStripMenuItem
             // 
@@ -704,29 +704,29 @@
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.saveAsToolStripMenuItem.Text = "Save &As";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(152, 6);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(152, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -739,7 +739,7 @@
             this.toolStripSeparator4,
             this.selectAllToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(42, 21);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
             // cutToolStripMenuItem
@@ -748,7 +748,7 @@
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cutToolStripMenuItem.Text = "Cu&t";
             // 
             // copyToolStripMenuItem
@@ -757,7 +757,7 @@
             this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.copyToolStripMenuItem.Text = "&Copy";
             // 
             // pasteToolStripMenuItem
@@ -766,24 +766,25 @@
             this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pasteToolStripMenuItem.Text = "&Paste";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(141, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
             // 
             // selectAllToolStripMenuItem
             // 
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.selectAllToolStripMenuItem.Text = "Select &All";
+            this.selectAllToolStripMenuItem.Click += new System.EventHandler(this.selectAllToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(52, 21);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
             // helpToolStripMenuItem
@@ -795,36 +796,37 @@
             this.toolStripSeparator5,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // contentsToolStripMenuItem
             // 
             this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.contentsToolStripMenuItem.Text = "&Contents";
+            this.contentsToolStripMenuItem.Click += new System.EventHandler(this.contentsToolStripMenuItem_Click);
             // 
             // indexToolStripMenuItem
             // 
             this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            this.indexToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.indexToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.indexToolStripMenuItem.Text = "&Index";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(119, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(124, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -844,7 +846,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cisco IOS Configuration Wizard";
             this.tabControl1.ResumeLayout(false);
-            this.mainCFG.ResumeLayout(false);
+            this.tabMain.ResumeLayout(false);
             this.grpCon.ResumeLayout(false);
             this.grpCon.PerformLayout();
             this.boxVTY.ResumeLayout(false);
@@ -853,15 +855,15 @@
             this.boxPassword.PerformLayout();
             this.boxGeneral.ResumeLayout(false);
             this.boxGeneral.PerformLayout();
-            this.interCFG.ResumeLayout(false);
+            this.tabInterfaces.ResumeLayout(false);
             this.boxInterface.ResumeLayout(false);
             this.boxInterface.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numInterfaceCIDR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numInterfaceClock)).EndInit();
             this.boxNewInterface.ResumeLayout(false);
             this.boxNewInterface.PerformLayout();
-            this.output.ResumeLayout(false);
-            this.output.PerformLayout();
+            this.tabOutput.ResumeLayout(false);
+            this.tabOutput.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -872,10 +874,10 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage mainCFG;
-        private System.Windows.Forms.TabPage interCFG;
-        private System.Windows.Forms.TabPage routingCFG;
-        private System.Windows.Forms.TabPage output;
+        private System.Windows.Forms.TabPage tabMain;
+        private System.Windows.Forms.TabPage tabInterfaces;
+        private System.Windows.Forms.TabPage tabRouting;
+        private System.Windows.Forms.TabPage tabOutput;
         private System.Windows.Forms.Label lblOutput;
         private System.Windows.Forms.GroupBox boxGeneral;
         private System.Windows.Forms.TextBox txtHostname;

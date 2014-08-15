@@ -76,3 +76,4 @@ E:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Confi
 E:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.FormAbout.resources
 E:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.Properties.Resources.resources
 E:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csproj.GenerateResource.Cache
+C:\Users\Didier\Desktop\Dossiers.Folders\Developpement\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.FormHelp.resources

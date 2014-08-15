@@ -57,26 +57,35 @@
     <Compile Include="clsConfWiz.cs" />
     <Compile Include="clsInterfaces.cs" />
     <Compile Include="clsText.cs" />
-    <Compile Include="CiscoIOSWiz.cs">
+    <Compile Include="Forms\CiscoIOSWiz.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CiscoIOSWiz.Designer.cs">
+    <Compile Include="Forms\CiscoIOSWiz.Designer.cs">
       <DependentUpon>CiscoIOSWiz.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAbout.cs">
+    <Compile Include="Forms\FormAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAbout.Designer.cs">
+    <Compile Include="Forms\FormAbout.Designer.cs">
       <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormHelp.Designer.cs">
+      <DependentUpon>FormHelp.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Save.cs" />
-    <EmbeddedResource Include="CiscoIOSWiz.resx">
+    <EmbeddedResource Include="Forms\CiscoIOSWiz.resx">
       <DependentUpon>CiscoIOSWiz.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAbout.resx">
+    <EmbeddedResource Include="Forms\FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormHelp.resx">
+      <DependentUpon>FormHelp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

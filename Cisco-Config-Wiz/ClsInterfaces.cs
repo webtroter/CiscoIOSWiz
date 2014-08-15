@@ -199,7 +199,10 @@ namespace Cisco_Config_Wiz
                 {
                     if (pByte == validByte)
                     {
-                        return (compt == 0 || pByteArray[compt - 1] == 255);
+                        if (compt != 0 && pByteArray[compt - 1] == 255)
+                        {
+                            
+                        }
                     }
                 }
             }

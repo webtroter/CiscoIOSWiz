@@ -62,7 +62,12 @@ namespace Save
             byte[] comma = { 0x2C };
             byte[] nl = { 0x0D, 0x0A };
 
-            using (System.Xml.XmlWriter writer = System.Xml.XmlWriter.Create(stream))
+            System.Xml.XmlWriterSettings settings = new System.Xml.XmlWriterSettings();
+            settings.OmitXmlDeclaration = false;
+            settings.Indent = true;
+            settings.NewLineOnAttributes = true;
+
+            using (System.Xml.XmlWriter writer = System.Xml.XmlWriter.Create(stream, settings))
             {
                 writer.WriteStartDocument();
                 writer.WriteStartElement("Connections");

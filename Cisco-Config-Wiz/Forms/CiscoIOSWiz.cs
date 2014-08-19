@@ -297,6 +297,10 @@ namespace Cisco_Config_Wiz
                 {
                     Console.WriteLine("Full MASK");
                     //IsValidMask(ipInterfaceMask.Text);
+                    if (!IsValidMask(ipInterfaceMask.Text))
+                    {
+                        errorProvider1.SetError(ipInterfaceMask, "Mask is not valid");
+                    }
                     obj_CurrentInterface.Mask = ipInterfaceMask.Text;
                     Console.WriteLine("CIDR:" + obj_CurrentInterface.CIDRMask.ToString());
                     Console.WriteLine("Mask:" + obj_CurrentInterface.Mask.ToString());

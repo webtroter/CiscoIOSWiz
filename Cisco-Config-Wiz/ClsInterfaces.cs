@@ -75,6 +75,13 @@ namespace Cisco_Config_Wiz
                 {
                     m_tabMaskByte = byteArray;
                 }
+                else
+                {
+                    for (int pos = 0; pos < m_tabMaskByte.Length; pos++)
+                    {
+                        m_tabMaskByte[pos] = 0;
+                    }
+                }
                 //int compt = 0;
                 //foreach (string pPart in tabMask)
                 //{
@@ -186,7 +193,13 @@ namespace Cisco_Config_Wiz
             }
             return interTypes;
         }
-        public bool IsValidMask(byte[] pByteArray)
+        #region IsValidMask( byteArray or String )
+        /// <summary>
+        /// Will confirm that the mask entered is valid. (Only UP bits followed by only down bits)
+        /// </summary>
+        /// <param name="pByteArray">Bytes Array - An IP!</param>
+        /// <returns></returns>
+        public static bool IsValidMask(byte[] pByteArray)
         {
             if (pByteArray.Length != 4)
             {
@@ -195,7 +208,7 @@ namespace Cisco_Config_Wiz
 
             for (int pos = 0; pos < 4; pos++)
             {
-                if (pos != 0 && pByteArray[pos - 1] != 255)
+                if (pos != 0 && pByteArray[pos - 1] != 255 && pByteArray[pos] != 0)
                 {
                     return false;
                 }
@@ -203,7 +216,13 @@ namespace Cisco_Config_Wiz
 
             return true;
         }
-        public bool IsValidMask(string pString)
+        /// <summary>
+        /// Will confirm that the mask entered is valid. (Only UP bits followed by only down bits)
+        /// Will convert a string of the format WWW.XXX.YYY.ZZZ to a byte array first
+        /// </summary>
+        /// <param name="pString">String of the format WWW.XXX.YYY.ZZZ that will be converted to a byte array</param>
+        /// <returns></returns>
+        public static bool IsValidMask(string pString)
         {
             byte[] pByteArray = new byte[4];
             string[] tabMask = pString.Split('.');
@@ -220,7 +239,7 @@ namespace Cisco_Config_Wiz
 
             for (int pos = 0; pos < 4; pos++)
             {
-                if (pos != 0 && pByteArray[pos - 1] != 255)
+                if (pos != 0 && pByteArray[pos - 1] != 255 && pByteArray[pos] != 0)
                 {
                     return false;
                 }
@@ -228,6 +247,8 @@ namespace Cisco_Config_Wiz
 
             return true;
         }
+        #endregion
+
         // <summary>
         // Will calculate the Mask from the CIDR, or the CIDR from the Mask.
         // </summary>

@@ -99,7 +99,8 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errMask = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errAddInterface = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.grpCon.SuspendLayout();
@@ -113,7 +114,8 @@
             this.boxNewInterface.SuspendLayout();
             this.tabOutput.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errMask)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errAddInterface)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -573,10 +575,10 @@
             // 
             // btnnewInterfaceAdd
             // 
-            this.btnnewInterfaceAdd.Location = new System.Drawing.Point(462, 17);
+            this.btnnewInterfaceAdd.Location = new System.Drawing.Point(448, 17);
             this.btnnewInterfaceAdd.Name = "btnnewInterfaceAdd";
-            this.btnnewInterfaceAdd.Size = new System.Drawing.Size(110, 23);
-            this.btnnewInterfaceAdd.TabIndex = 3;
+            this.btnnewInterfaceAdd.Size = new System.Drawing.Size(126, 23);
+            this.btnnewInterfaceAdd.TabIndex = 4;
             this.btnnewInterfaceAdd.Text = "Add Interface";
             this.btnnewInterfaceAdd.UseVisualStyleBackColor = true;
             this.btnnewInterfaceAdd.Click += new System.EventHandler(this.btnnewInterfaceAdd_Click);
@@ -585,27 +587,28 @@
             // 
             this.cboNewInterfaceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboNewInterfaceType.FormattingEnabled = true;
-            this.cboNewInterfaceType.Location = new System.Drawing.Point(155, 19);
+            this.cboNewInterfaceType.Location = new System.Drawing.Point(157, 19);
             this.cboNewInterfaceType.Name = "cboNewInterfaceType";
-            this.cboNewInterfaceType.Size = new System.Drawing.Size(158, 21);
+            this.cboNewInterfaceType.Size = new System.Drawing.Size(140, 21);
             this.cboNewInterfaceType.TabIndex = 2;
             // 
             // txtNewInterfaceName
             // 
             this.txtNewInterfaceName.Location = new System.Drawing.Point(11, 19);
             this.txtNewInterfaceName.Name = "txtNewInterfaceName";
-            this.txtNewInterfaceName.Size = new System.Drawing.Size(138, 20);
+            this.txtNewInterfaceName.Size = new System.Drawing.Size(140, 20);
             this.txtNewInterfaceName.TabIndex = 1;
             this.txtNewInterfaceName.Enter += new System.EventHandler(this.txtNewInterfaceName_Enter);
             this.txtNewInterfaceName.Leave += new System.EventHandler(this.txtNewInterfaceName_Leave);
             // 
             // txtNewInterfaceNumber
             // 
-            this.txtNewInterfaceNumber.Location = new System.Drawing.Point(319, 19);
+            this.txtNewInterfaceNumber.Location = new System.Drawing.Point(302, 19);
             this.txtNewInterfaceNumber.Name = "txtNewInterfaceNumber";
-            this.txtNewInterfaceNumber.Size = new System.Drawing.Size(137, 20);
-            this.txtNewInterfaceNumber.TabIndex = 1;
+            this.txtNewInterfaceNumber.Size = new System.Drawing.Size(140, 20);
+            this.txtNewInterfaceNumber.TabIndex = 3;
             this.txtNewInterfaceNumber.Enter += new System.EventHandler(this.txtNewInterfaceNumber_Enter);
+            this.txtNewInterfaceNumber.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNewInterfaceNumber_KeyUp);
             this.txtNewInterfaceNumber.Leave += new System.EventHandler(this.txtNewInterfaceNumber_Leave);
             // 
             // tabRouting
@@ -838,9 +841,17 @@
             this.SaveFileDialog.Filter = "Text files (*.txt)|*.txt|XML file (*.xml)|*.xml";
             this.SaveFileDialog.FilterIndex = 0;
             // 
-            // errorProvider1
+            // errMask
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.errMask.BlinkRate = 0;
+            this.errMask.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errMask.ContainerControl = this;
+            // 
+            // errAddInterface
+            // 
+            this.errAddInterface.BlinkRate = 0;
+            this.errAddInterface.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errAddInterface.ContainerControl = this;
             // 
             // CiscoIOSWiz
             // 
@@ -873,7 +884,8 @@
             this.tabOutput.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errMask)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errAddInterface)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -950,6 +962,7 @@
         private System.Windows.Forms.Label lblMask;
         private System.Windows.Forms.Label lblDTEDCE;
         private System.Windows.Forms.Label lblSerialClock;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errMask;
+        private System.Windows.Forms.ErrorProvider errAddInterface;
     }
 }

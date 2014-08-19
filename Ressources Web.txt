@@ -1,0 +1,6 @@
+### Création d'exception ###
+http://msdn.microsoft.com/en-us/library/vstudio/ms229064(v=vs.100).aspx
+http://msdn.microsoft.com/en-us/library/87cdya3t(v=vs.110).aspx
+
+### Error Provider ###
+http://www.c-sharpcorner.com/UploadFile/DipalChoksi/UsingErrorProviderContolinWindowsFormsandCSharp11242005010829AM/UsingErrorProviderContolinWindowsFormsandCSharp.aspx

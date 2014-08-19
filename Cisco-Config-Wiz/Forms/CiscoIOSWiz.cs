@@ -221,6 +221,20 @@ namespace Cisco_Config_Wiz
         #endregion
         private void btnnewInterfaceAdd_Click(object sender, EventArgs e)
         {
+            
+            if (obj_NewInterfaceName.BoxModeObj == clsText.BoxMode.Title)
+            {
+                errAddInterface.SetError(txtNewInterfaceName, "Name is empty");
+                txtNewInterfaceName.Size = new System.Drawing.Size(130, 23);
+                return;
+            }
+            if (obj_NewInterfacenumber.BoxModeObj == clsText.BoxMode.Title)
+            {
+                errAddInterface.SetError(txtNewInterfaceNumber, "Number is Empty");
+                txtNewInterfaceNumber.Size = new System.Drawing.Size(130, 23);
+                return;
+            }
+            errAddInterface.Clear();
             obj_ListInterfaces.Add(new clsInterfaces(txtNewInterfaceName.Text,
                 (clsInterfaces.InterfaceTypes)cboNewInterfaceType.SelectedIndex,
                 txtNewInterfaceNumber.Text));
@@ -230,7 +244,16 @@ namespace Cisco_Config_Wiz
             txtNoInterfaceWarning.Visible = false;
 
         }
+        private void txtNewInterfaceNumber_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                btnnewInterfaceAdd.PerformClick();
+            }
+        }
+
         #endregion
+
 
         private void cboInterfaces_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -242,7 +265,43 @@ namespace Cisco_Config_Wiz
         }
 
 
+        private void ipInterfaceMask_TextChanged(object sender, EventArgs e)
+        {
+            string[] ipMask = ipInterfaceMask.Text.Split('.');
+            int compt = 0;
+            foreach (string ipPart in ipMask)
+            {
+                if (ipPart != "")
+                {
 
+                    compt++;
+                    //Console.Write('-');
+                }
+                //Console.WriteLine(ipPart);
+                if (compt == 4)
+                {
+                    Console.WriteLine("Full MASK");
+                    //IsValidMask(ipInterfaceMask.Text);
+                    if (!clsInterfaces.IsValidMask(ipInterfaceMask.Text))
+                    {
+                        errMask.SetError(ipInterfaceMask, "Mask is not valid");
+                    }
+                    else errMask.Clear();
+                    obj_CurrentInterface.Mask = ipInterfaceMask.Text;
+                    Console.WriteLine("CIDR:" + obj_CurrentInterface.CIDRMask.ToString());
+                    Console.WriteLine("Mask:" + obj_CurrentInterface.Mask.ToString());
+                }
+                //Console.WriteLine("=" + compt);
+            }
+        }
+
+        private void numInterfaceCIDR_ValueChanged(object sender, EventArgs e)
+        {
+            //obj_CurrentInterface.CalculateMaskAndCIDR(true);
+            obj_CurrentInterface.CIDRMask = (int)numInterfaceCIDR.Value;
+            Console.WriteLine("CIDR:" + obj_CurrentInterface.CIDRMask.ToString());
+            Console.WriteLine("Mask:" + obj_CurrentInterface.Mask.ToString());
+        }
         #endregion
 
         #region UI
@@ -279,85 +338,48 @@ namespace Cisco_Config_Wiz
             txtOutput.SelectAll();
         }
         #endregion
+        #region MaskValidationInForm - No more useful Thanks static
+        //public bool IsValidMask(byte[] pByteArray)
+        //{
+        //    if (pByteArray.Length != 4)
+        //    {
+        //        return false;
+        //    }
 
-        private void ipInterfaceMask_TextChanged(object sender, EventArgs e)
-        {
-            string[] ipMask = ipInterfaceMask.Text.Split('.');
-            int compt = 0;
-            foreach (string ipPart in ipMask)
-            {
-                if (ipPart != "")
-                {
-                    
-                    compt++;
-                    //Console.Write('-');
-                }
-                //Console.WriteLine(ipPart);
-                if (compt == 4)
-                {
-                    Console.WriteLine("Full MASK");
-                    //IsValidMask(ipInterfaceMask.Text);
-                    if (!IsValidMask(ipInterfaceMask.Text))
-                    {
-                        errorProvider1.SetError(ipInterfaceMask, "Mask is not valid");
-                    }
-                    obj_CurrentInterface.Mask = ipInterfaceMask.Text;
-                    Console.WriteLine("CIDR:" + obj_CurrentInterface.CIDRMask.ToString());
-                    Console.WriteLine("Mask:" + obj_CurrentInterface.Mask.ToString());
-                }
-                //Console.WriteLine("=" + compt);
-            }
-        }
+        //    for (int pos = 0; pos < 4; pos++)
+        //    {
+        //        if (pos != 0 && pByteArray[pos - 1] != 255 && pByteArray[pos] != 0)
+        //        {
+        //            return false;
+        //        }
+        //    }
 
-        private void numInterfaceCIDR_ValueChanged(object sender, EventArgs e)
-        {
-            //obj_CurrentInterface.CalculateMaskAndCIDR(true);
-            obj_CurrentInterface.CIDRMask = (int)numInterfaceCIDR.Value;
-            Console.WriteLine("CIDR:" + obj_CurrentInterface.CIDRMask.ToString());
-            Console.WriteLine("Mask:" + obj_CurrentInterface.Mask.ToString());
-        }
-        #region MaskValidationInForm
-        public bool IsValidMask(byte[] pByteArray)
-        {
-            if (pByteArray.Length != 4)
-            {
-                return false;
-            }
+        //    return true;
+        //}
+        //public bool IsValidMask(string pString)
+        //{
+        //    byte[] pByteArray = new byte[4];
+        //    string[] tabMask = pString.Split('.');
+        //    int compt = 0;
+        //    foreach (string pPart in tabMask)
+        //    {
+        //        pByteArray[compt] = (byte)int.Parse(pPart);
+        //        compt++;
+        //    }
+        //    if (pByteArray.Length != 4)
+        //    {
+        //        return false;
+        //    }
+        //    for (int pos = 0; pos < 4; pos++)
+        //    {
+        //        if (pos != 0 && pByteArray[pos - 1] != 255 && pByteArray[pos] != 0)
+        //        {
+        //            return false;
+        //        }
+        //    }
 
-            for (int pos = 0; pos < 4; pos++)
-            {
-                if (pos != 0 && pByteArray[pos - 1] != 255)
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-        public bool IsValidMask(string pString)
-        {
-            byte[] pByteArray = new byte[4];
-            string[] tabMask = pString.Split('.');
-            int compt = 0;
-            foreach (string pPart in tabMask)
-            {
-                pByteArray[compt] = (byte)int.Parse(pPart);
-                compt++;
-            }
-            if (pByteArray.Length != 4)
-            {
-                return false;
-            }
-            for (int pos = 0; pos < 4; pos++)
-            {
-                if (pos != 0 && pByteArray[pos - 1] != 255)
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
+        //    return true;
+        //}
         #endregion
     }
 }

@@ -22,6 +22,7 @@ namespace Cisco_Config_Wiz
         clsText obj_NewInterfacenumber;
         List<clsInterfaces> obj_ListInterfaces = new List<clsInterfaces>();
         clsInterfaces obj_CurrentInterface = null;
+
         public CiscoIOSWiz()
         {
             InitializeComponent();
@@ -295,6 +296,7 @@ namespace Cisco_Config_Wiz
                 if (compt == 4)
                 {
                     Console.WriteLine("Full MASK");
+                    //IsValidMask(ipInterfaceMask.Text);
                     obj_CurrentInterface.Mask = ipInterfaceMask.Text;
                     Console.WriteLine("CIDR:" + obj_CurrentInterface.CIDRMask.ToString());
                     Console.WriteLine("Mask:" + obj_CurrentInterface.Mask.ToString());
@@ -310,5 +312,48 @@ namespace Cisco_Config_Wiz
             Console.WriteLine("CIDR:" + obj_CurrentInterface.CIDRMask.ToString());
             Console.WriteLine("Mask:" + obj_CurrentInterface.Mask.ToString());
         }
+        #region MaskValidationInForm
+        public bool IsValidMask(byte[] pByteArray)
+        {
+            if (pByteArray.Length != 4)
+            {
+                return false;
+            }
+
+            for (int pos = 0; pos < 4; pos++)
+            {
+                if (pos != 0 && pByteArray[pos - 1] != 255)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        public bool IsValidMask(string pString)
+        {
+            byte[] pByteArray = new byte[4];
+            string[] tabMask = pString.Split('.');
+            int compt = 0;
+            foreach (string pPart in tabMask)
+            {
+                pByteArray[compt] = (byte)int.Parse(pPart);
+                compt++;
+            }
+            if (pByteArray.Length != 4)
+            {
+                return false;
+            }
+            for (int pos = 0; pos < 4; pos++)
+            {
+                if (pos != 0 && pByteArray[pos - 1] != 255)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        #endregion
     }
 }

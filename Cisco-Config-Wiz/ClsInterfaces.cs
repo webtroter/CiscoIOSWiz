@@ -192,21 +192,41 @@ namespace Cisco_Config_Wiz
             {
                 return false;
             }
-            int compt = 0;
-            foreach (byte pByte in pByteArray)
+
+            for (int pos = 0; pos < 4; pos++)
             {
-                foreach (byte validByte in GOOD_MASK_VALUES)
+                if (pos != 0 && pByteArray[pos - 1] != 255)
                 {
-                    if (pByte == validByte)
-                    {
-                        if (compt != 0 && pByteArray[compt - 1] == 255)
-                        {
-                            
-                        }
-                    }
+                    return false;
                 }
             }
-            return false;
+
+            return true;
+        }
+        public bool IsValidMask(string pString)
+        {
+            byte[] pByteArray = new byte[4];
+            string[] tabMask = pString.Split('.');
+            int compt = 0;
+            foreach (string pPart in tabMask)
+            {
+                pByteArray[compt] = (byte)int.Parse(pPart);
+                compt++;
+            }
+            if (pByteArray.Length != 4)
+            {
+                return false;
+            }
+
+            for (int pos = 0; pos < 4; pos++)
+            {
+                if (pos != 0 && pByteArray[pos - 1] != 255)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
         // <summary>
         // Will calculate the Mask from the CIDR, or the CIDR from the Mask.

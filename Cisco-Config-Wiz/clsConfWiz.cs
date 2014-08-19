@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Cisco_Config_Wiz
 {
-    class clsConfWiz : List<clsInterfaces>
+    class clsConfWiz
     {
 
     }

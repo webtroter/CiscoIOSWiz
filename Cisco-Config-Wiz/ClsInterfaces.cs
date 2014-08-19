@@ -184,7 +184,7 @@ namespace Cisco_Config_Wiz
                     return "";
             }
         }
-        public List<string> GetInterfaceTypes()
+        public static List<string> GetInterfaceTypes()
         {
             List<string> interTypes = new List<string>();
             foreach (var interfType in Enum.GetNames(typeof(InterfaceTypes)))
@@ -258,7 +258,7 @@ namespace Cisco_Config_Wiz
         /// </summary>
         /// <param name="pByteArray">Mask in byteArray</param>
         /// <returns></returns>
-        public int CalculateMaskAndCIDR(byte[] pByteArray)
+        public static int CalculateMaskAndCIDR(byte[] pByteArray)
         {
             //Console.WriteLine("Calculating...");
             //if (pFromCIDR)

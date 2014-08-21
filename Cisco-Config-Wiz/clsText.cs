@@ -17,8 +17,8 @@ namespace Cisco_Config_Wiz
         string m_txtBoxName;
         public string Name
         {
-            get;
-            private set;
+            get { return m_txtBoxName; }
+            private set { m_txtBoxName = value; }
         }
 
         /// <summary>
@@ -83,6 +83,19 @@ namespace Cisco_Config_Wiz
         }
         #endregion
 
+        #region
+        public override string ToString()
+        {
+            string m_toString = Name;
+            if (Title != "")
+            {
+                m_toString = Name + " - " + Title;
+            }
+            
+            return m_toString;
+        }
+        #endregion
+
         #region Constructeurs
         /// <summary>
         /// TextBox with Title and password option
@@ -95,7 +108,7 @@ namespace Cisco_Config_Wiz
             Title = pTitle;
             m_BoxMode = BoxMode.Title;
             SetBoxMode(m_BoxMode);
-            m_txtBoxName = pTxtBox.Name;
+            m_txtBoxName = pTxtBox.Name.ToString();
         }
         /// <summary>
         /// TextBox with Title and password option

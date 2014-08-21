@@ -13,6 +13,14 @@ namespace Cisco_Config_Wiz
             get { return m_txtBox; }
             private set { m_txtBox = value; }
         }
+
+        string m_txtBoxName;
+        public string Name
+        {
+            get;
+            private set;
+        }
+
         /// <summary>
         /// Title of the textbox.
         /// </summary>
@@ -87,6 +95,7 @@ namespace Cisco_Config_Wiz
             Title = pTitle;
             m_BoxMode = BoxMode.Title;
             SetBoxMode(m_BoxMode);
+            m_txtBoxName = pTxtBox.Name;
         }
         /// <summary>
         /// TextBox with Title and password option
@@ -100,6 +109,7 @@ namespace Cisco_Config_Wiz
             Title = pTitle;
             m_BoxMode = pBoxMode;
             SetBoxMode(m_BoxMode);
+            m_txtBoxName = pTxtBox.Name;
         }
         #endregion
     }

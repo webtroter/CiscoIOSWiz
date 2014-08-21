@@ -40,6 +40,7 @@ namespace Cisco_Config_Wiz
                 cboNewInterfaceType.Items.Add(interfType.ToString());
             }
             cboNewInterfaceType.SelectedItem = cboNewInterfaceType.Items[0];
+            clsConfWiz ConfWiz = new clsConfWiz(this);
 
             //DEBUG
             txtOutput.AppendText("c68034f9fb64a322c66a8e07b40526622c470b2ba14f1a6edf2a56a278cc354b" + nl);

@@ -101,6 +101,7 @@
             this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.errMask = new System.Windows.Forms.ErrorProvider(this.components);
             this.errAddInterface = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chkDomLook = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.grpCon.SuspendLayout();
@@ -153,7 +154,7 @@
             this.grpCon.Controls.Add(this.chkConLogSync);
             this.grpCon.Controls.Add(this.chkConLogin);
             this.grpCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpCon.Location = new System.Drawing.Point(8, 212);
+            this.grpCon.Location = new System.Drawing.Point(206, 109);
             this.grpCon.Name = "grpCon";
             this.grpCon.Size = new System.Drawing.Size(192, 97);
             this.grpCon.TabIndex = 1;
@@ -202,7 +203,7 @@
             this.boxVTY.Controls.Add(this.chkVTYLogSync);
             this.boxVTY.Controls.Add(this.chkVTYLogin);
             this.boxVTY.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.boxVTY.Location = new System.Drawing.Point(8, 109);
+            this.boxVTY.Location = new System.Drawing.Point(206, 6);
             this.boxVTY.Name = "boxVTY";
             this.boxVTY.Size = new System.Drawing.Size(192, 97);
             this.boxVTY.TabIndex = 1;
@@ -251,7 +252,7 @@
             this.boxPassword.Controls.Add(this.chkEncrypt);
             this.boxPassword.Controls.Add(this.chkEnLogin);
             this.boxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.boxPassword.Location = new System.Drawing.Point(206, 6);
+            this.boxPassword.Location = new System.Drawing.Point(8, 133);
             this.boxPassword.Name = "boxPassword";
             this.boxPassword.Size = new System.Drawing.Size(192, 97);
             this.boxPassword.TabIndex = 0;
@@ -298,12 +299,13 @@
             // boxGeneral
             // 
             this.boxGeneral.Controls.Add(this.txtMotdBanner);
+            this.boxGeneral.Controls.Add(this.chkDomLook);
             this.boxGeneral.Controls.Add(this.txtLogBanner);
             this.boxGeneral.Controls.Add(this.txtHostname);
             this.boxGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxGeneral.Location = new System.Drawing.Point(8, 6);
             this.boxGeneral.Name = "boxGeneral";
-            this.boxGeneral.Size = new System.Drawing.Size(192, 97);
+            this.boxGeneral.Size = new System.Drawing.Size(192, 121);
             this.boxGeneral.TabIndex = 0;
             this.boxGeneral.TabStop = false;
             this.boxGeneral.Text = "More General";
@@ -598,6 +600,7 @@
             this.txtNewInterfaceName.Name = "txtNewInterfaceName";
             this.txtNewInterfaceName.Size = new System.Drawing.Size(140, 20);
             this.txtNewInterfaceName.TabIndex = 1;
+            this.txtNewInterfaceName.TextChanged += new System.EventHandler(this.txtNewInterfaceName_TextChanged);
             this.txtNewInterfaceName.Enter += new System.EventHandler(this.txtNewInterfaceName_Enter);
             this.txtNewInterfaceName.Leave += new System.EventHandler(this.txtNewInterfaceName_Leave);
             // 
@@ -607,6 +610,7 @@
             this.txtNewInterfaceNumber.Name = "txtNewInterfaceNumber";
             this.txtNewInterfaceNumber.Size = new System.Drawing.Size(140, 20);
             this.txtNewInterfaceNumber.TabIndex = 3;
+            this.txtNewInterfaceNumber.TextChanged += new System.EventHandler(this.txtNewInterfaceNumber_TextChanged);
             this.txtNewInterfaceNumber.Enter += new System.EventHandler(this.txtNewInterfaceNumber_Enter);
             this.txtNewInterfaceNumber.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNewInterfaceNumber_KeyUp);
             this.txtNewInterfaceNumber.Leave += new System.EventHandler(this.txtNewInterfaceNumber_Leave);
@@ -853,6 +857,17 @@
             this.errAddInterface.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errAddInterface.ContainerControl = this;
             // 
+            // chkDomLook
+            // 
+            this.chkDomLook.AutoSize = true;
+            this.chkDomLook.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkDomLook.Location = new System.Drawing.Point(6, 97);
+            this.chkDomLook.Name = "chkDomLook";
+            this.chkDomLook.Size = new System.Drawing.Size(118, 17);
+            this.chkDomLook.TabIndex = 0;
+            this.chkDomLook.Text = "No Domain-Lookup";
+            this.chkDomLook.UseVisualStyleBackColor = true;
+            // 
             // CiscoIOSWiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -964,5 +979,6 @@
         private System.Windows.Forms.Label lblSerialClock;
         private System.Windows.Forms.ErrorProvider errMask;
         private System.Windows.Forms.ErrorProvider errAddInterface;
+        private System.Windows.Forms.CheckBox chkDomLook;
     }
 }

@@ -22,6 +22,7 @@ namespace Cisco_Config_Wiz
         clsText obj_NewInterfacenumber;
         List<clsInterfaces> obj_ListInterfaces = new List<clsInterfaces>();
         clsInterfaces obj_CurrentInterface = null;
+        clsConfWiz ConfWiz;
 
         public CiscoIOSWiz()
         {
@@ -187,6 +188,14 @@ namespace Cisco_Config_Wiz
         #region Interfaces
         #region New Interface
         #region New Interface Name
+
+        private void txtNewInterfaceName_TextChanged(object sender, EventArgs e)
+        {
+            errAddInterface.Clear();
+            txtNewInterfaceName.Size = new System.Drawing.Size(140, 23);
+            txtNewInterfaceNumber.Size = new System.Drawing.Size(140, 23);
+        }
+
         private void txtNewInterfaceName_Enter(object sender, EventArgs e)
         {
             if (obj_NewInterfaceName.BoxModeObj == clsText.BoxMode.Title)
@@ -204,6 +213,12 @@ namespace Cisco_Config_Wiz
         }
         #endregion
         #region New Interface Number
+        private void txtNewInterfaceNumber_TextChanged(object sender, EventArgs e)
+        {
+            errAddInterface.Clear();
+            txtNewInterfaceName.Size = new System.Drawing.Size(140, 23);
+            txtNewInterfaceNumber.Size = new System.Drawing.Size(140, 23);
+        }
         private void txtNewInterfaceNumber_Enter(object sender, EventArgs e)
         {
             if (obj_NewInterfacenumber.BoxModeObj == clsText.BoxMode.Title)
@@ -222,27 +237,32 @@ namespace Cisco_Config_Wiz
         #endregion
         private void btnnewInterfaceAdd_Click(object sender, EventArgs e)
         {
-            
+            bool newInterOK = true;
             if (obj_NewInterfaceName.BoxModeObj == clsText.BoxMode.Title)
             {
                 errAddInterface.SetError(txtNewInterfaceName, "Name is empty");
                 txtNewInterfaceName.Size = new System.Drawing.Size(130, 23);
-                return;
+                newInterOK = false;
             }
             if (obj_NewInterfacenumber.BoxModeObj == clsText.BoxMode.Title)
             {
                 errAddInterface.SetError(txtNewInterfaceNumber, "Number is Empty");
                 txtNewInterfaceNumber.Size = new System.Drawing.Size(130, 23);
-                return;
+                newInterOK = false;
             }
-            errAddInterface.Clear();
-            obj_ListInterfaces.Add(new clsInterfaces(txtNewInterfaceName.Text,
-                (clsInterfaces.InterfaceTypes)cboNewInterfaceType.SelectedIndex,
-                txtNewInterfaceNumber.Text));
-            cboInterfaces.Items.Add(obj_ListInterfaces[obj_ListInterfaces.Count - 1]);
-            boxInterface.Enabled = true;
-            cboInterfaces.SelectedIndex = cboInterfaces.Items.Count - 1;
-            txtNoInterfaceWarning.Visible = false;
+            if (newInterOK)
+            {
+                errAddInterface.Clear();
+                obj_ListInterfaces.Add(new clsInterfaces(txtNewInterfaceName.Text,
+                    (clsInterfaces.InterfaceTypes)cboNewInterfaceType.SelectedIndex,
+                    txtNewInterfaceNumber.Text));
+                obj_NewInterfaceName.SetBoxMode(clsText.BoxMode.Title);
+                obj_NewInterfacenumber.SetBoxMode(clsText.BoxMode.Title);
+                cboInterfaces.Items.Add(obj_ListInterfaces[obj_ListInterfaces.Count - 1]);
+                boxInterface.Enabled = true;
+                cboInterfaces.SelectedIndex = cboInterfaces.Items.Count - 1;
+                txtNoInterfaceWarning.Visible = false;
+            }
 
         }
         private void txtNewInterfaceNumber_KeyUp(object sender, KeyEventArgs e)
@@ -339,6 +359,7 @@ namespace Cisco_Config_Wiz
             txtOutput.SelectAll();
         }
         #endregion
+        
         #region MaskValidationInForm - No more useful Thanks static
         //public bool IsValidMask(byte[] pByteArray)
         //{

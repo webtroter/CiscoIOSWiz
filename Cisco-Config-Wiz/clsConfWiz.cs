@@ -32,22 +32,48 @@ namespace Cisco_Config_Wiz
         #region General Things like Methods
 
         private List<clsText> m_ListTextBox = new List<clsText>();
-        public List<clsText> obj_Ltxt
+        public List<clsText> ListTextBox
         {
             get { return m_ListTextBox; }
             private set { m_ListTextBox = value; }
         }
+        #region set and remove title
+        //public void setTitle(clsText pTextBox)
+        //{
+        //    if (pTextBox.BoxModeObj == clsText.BoxMode.Title)
+        //    {
+        //        pTextBox.SetBoxMode(clsText.BoxMode.Default);
+        //    }
+        //}
+        //public void setTitle(TextBox pTextBox)
+        //{
+        //    foreach (clsText pText in m_ListTextBox)
+        //    {
+        //        if (pText.txtBox == pTextBox && pText.BoxModeObj == clsText.BoxMode.Title)
+        //        {
+        //            pText.SetBoxMode(clsText.BoxMode.Default);
+        //        }
+        //    }
+        //}
+        //public void removeTitle(object pTextBox)
+        //{
+        //    foreach (clsText pText in m_ListTextBox)
+        //    {
+        //        if (pText.txtBox == pTextBox && pText.txtBox.TextLength == 0)
+        //        {
+        //            pText.SetBoxMode(clsText.BoxMode.Title);
+        //        }
+        //    }
+        //}
 
-        public static void setTitle(TextBox pTextBox)
-        {
-            //if (obj_Hostname.BoxModeObj == clsText.BoxMode.Title)
-            //{
-            //    obj_Hostname.SetBoxMode(clsText.BoxMode.Default);
-            //}
-        }
-        public static void removeTitle(TextBox pTextBox)
-        {
-        }
+        //public void removeTitle(clsText pTextBox)
+        //{
+        //    if (pTextBox.txtBox.TextLength == 0)
+        //    {
+        //        pTextBox.SetBoxMode(clsText.BoxMode.Title);
+        //    }
+        //}
+        #endregion
 
         #endregion
 
@@ -55,9 +81,14 @@ namespace Cisco_Config_Wiz
 
         public clsConfWiz(Form formCiscoIOSWiz)
         {
-
+            #region ForEach pour les textbox
             foreach (Control pControl1 in formCiscoIOSWiz.Controls)
             {
+                if (pControl1 is TextBox)
+                {
+                    TextBox pTextBox = pControl1 as TextBox;
+                    m_ListTextBox.Add(new clsText(pTextBox.Text, pTextBox));
+                }
                 if (pControl1 is TabControl)
                 {
                     TabControl pTabControl = pControl1 as TabControl;
@@ -65,6 +96,11 @@ namespace Cisco_Config_Wiz
                     {
                         foreach (Control pControl2 in pTabPage.Controls)
                         {
+                            if (pControl2 is TextBox)
+                            {
+                                TextBox pTextBox = pControl2 as TextBox;
+                                m_ListTextBox.Add(new clsText(pTextBox.Text, pTextBox));
+                            }
                             foreach (Control pControl in pControl2.Controls)
                             {
                                 if (pControl is TextBox)
@@ -78,6 +114,10 @@ namespace Cisco_Config_Wiz
                     }
                 }
             }
+            #endregion
+
+
+
             Console.WriteLine(m_ListTextBox.Count.ToString());
 
             //foreach (Control pControl in formCiscoIOSWiz.Controls)
@@ -90,7 +130,6 @@ namespace Cisco_Config_Wiz
             //    }
             //}
         }
-
         #endregion
     }
 }

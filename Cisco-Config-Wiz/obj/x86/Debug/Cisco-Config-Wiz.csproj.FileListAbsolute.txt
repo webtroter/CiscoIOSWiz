@@ -39,8 +39,6 @@ C:\Users\Alexis\ProgProjects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Co
 C:\Users\Alexis\ProgProjects\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\IPAddressControlLib.dll
 C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.CiscoIOSWiz.resources
 C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\IPAddressControlLib.dll
-C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.exe.CodeAnalysisLog.xml
-C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.exe.lastcodeanalysissucceeded
 C:\Users\Alexis\ProgProjects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.CiscoIOSWiz.resources
 C:\Users\Alexis\ProgProjects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.FormAbout.resources
 C:\Users\Didier\Desktop\Dossiers.Folders\Developpement\CiscoIOSWiz\Cisco-Config-Wiz\bin\Debug\Cisco-Config-Wiz.exe.config
@@ -79,3 +77,6 @@ E:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Confi
 C:\Users\Didier\Desktop\Dossiers.Folders\Developpement\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.FormHelp.resources
 C:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.FormHelp.resources
 E:\Users\webtroter\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.FormHelp.resources
+C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco-Config-Wiz.csprojResolveAssemblyReference.cache
+C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.FormAbout.resources
+C:\Users\Usager\Documents\Visual Studio 2012\Projects\CiscoIOSWiz\Cisco-Config-Wiz\obj\x86\Debug\Cisco_Config_Wiz.FormHelp.resources

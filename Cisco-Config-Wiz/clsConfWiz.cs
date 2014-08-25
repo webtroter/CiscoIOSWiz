@@ -29,7 +29,7 @@ namespace Cisco_Config_Wiz
         #endregion
         #endregion
 
-        #region General Things like Methods
+        #region General Things
 
         private List<clsText> m_ListTextBox = new List<clsText>();
         public List<clsText> ListTextBox
@@ -37,7 +37,42 @@ namespace Cisco_Config_Wiz
             get { return m_ListTextBox; }
             private set { m_ListTextBox = value; }
         }
-        #region set and remove title
+        #region ReturnTextBox
+        /// <summary>
+        /// Return the clsTextBox associatied with the name given
+        /// </summary>
+        /// <param name="pTBfound">Name of the TextBox</param>
+        /// <returns></returns>
+        public clsText ReturnTextBox(string pTBfound)
+        {
+            foreach (clsText pTextBox in m_ListTextBox)
+            {
+                if (pTextBox.Name == pTBfound)
+                {
+                    return pTextBox;
+                }
+            }
+            return null;
+        }
+        /// <summary>
+        /// Return the clsTextBox associatied with the textbox given
+        /// </summary>
+        /// <param name="pTBfound">TextBox itself</param>
+        /// <returns></returns>
+        public clsText ReturnTextBox(TextBox pTBfound)
+        {
+            foreach (clsText pTextBox in m_ListTextBox)
+            {
+                if (pTextBox.txtBox == pTBfound)
+                {
+                    return pTextBox;
+                }
+            }
+            return null;
+        }
+        #endregion
+
+        #region Doesn't work yet == set and remove title
         //public void setTitle(clsText pTextBox)
         //{
         //    if (pTextBox.BoxModeObj == clsText.BoxMode.Title)
@@ -115,8 +150,6 @@ namespace Cisco_Config_Wiz
                 }
             }
             #endregion
-
-
 
             Console.WriteLine(m_ListTextBox.Count.ToString());
 

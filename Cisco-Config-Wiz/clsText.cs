@@ -81,9 +81,8 @@ namespace Cisco_Config_Wiz
                     break;
             }
         }
-        #endregion
 
-        #region
+        #region ToString
         public override string ToString()
         {
             string m_toString = Name;
@@ -94,6 +93,8 @@ namespace Cisco_Config_Wiz
             
             return m_toString;
         }
+        #endregion
+
         #endregion
 
         #region Constructeurs

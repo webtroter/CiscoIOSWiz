@@ -46,6 +46,7 @@
             this.chkEnLogin = new System.Windows.Forms.CheckBox();
             this.boxGeneral = new System.Windows.Forms.GroupBox();
             this.txtMotdBanner = new System.Windows.Forms.TextBox();
+            this.chkDomLook = new System.Windows.Forms.CheckBox();
             this.txtLogBanner = new System.Windows.Forms.TextBox();
             this.txtHostname = new System.Windows.Forms.TextBox();
             this.tabInterfaces = new System.Windows.Forms.TabPage();
@@ -101,7 +102,6 @@
             this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.errMask = new System.Windows.Forms.ErrorProvider(this.components);
             this.errAddInterface = new System.Windows.Forms.ErrorProvider(this.components);
-            this.chkDomLook = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.grpCon.SuspendLayout();
@@ -321,6 +321,17 @@
             this.txtMotdBanner.Enter += new System.EventHandler(this.txtMotdBanner_Enter);
             this.txtMotdBanner.Leave += new System.EventHandler(this.txtMotdBanner_Leave);
             // 
+            // chkDomLook
+            // 
+            this.chkDomLook.AutoSize = true;
+            this.chkDomLook.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkDomLook.Location = new System.Drawing.Point(6, 97);
+            this.chkDomLook.Name = "chkDomLook";
+            this.chkDomLook.Size = new System.Drawing.Size(118, 17);
+            this.chkDomLook.TabIndex = 0;
+            this.chkDomLook.Text = "No Domain-Lookup";
+            this.chkDomLook.UseVisualStyleBackColor = true;
+            // 
             // txtLogBanner
             // 
             this.txtLogBanner.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -340,6 +351,7 @@
             this.txtHostname.Size = new System.Drawing.Size(180, 20);
             this.txtHostname.TabIndex = 2;
             this.txtHostname.Text = "Hostname";
+            this.txtHostname.TextChanged += new System.EventHandler(this.txtHostname_TextChanged);
             this.txtHostname.Enter += new System.EventHandler(this.txtHostname_Enter);
             this.txtHostname.Leave += new System.EventHandler(this.txtHostname_Leave);
             // 
@@ -856,17 +868,6 @@
             this.errAddInterface.BlinkRate = 0;
             this.errAddInterface.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errAddInterface.ContainerControl = this;
-            // 
-            // chkDomLook
-            // 
-            this.chkDomLook.AutoSize = true;
-            this.chkDomLook.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDomLook.Location = new System.Drawing.Point(6, 97);
-            this.chkDomLook.Name = "chkDomLook";
-            this.chkDomLook.Size = new System.Drawing.Size(118, 17);
-            this.chkDomLook.TabIndex = 0;
-            this.chkDomLook.Text = "No Domain-Lookup";
-            this.chkDomLook.UseVisualStyleBackColor = true;
             // 
             // CiscoIOSWiz
             // 

@@ -6,26 +6,227 @@ using System.Windows.Forms;
 
 namespace Cisco_Config_Wiz
 {
-    class clsConfWiz
+    class clsConfWiz : IConfWiz
     {
         #region General Configuration
         #region Hostname, etc.
-        public clsText Hostname
+        public string Hostname
         {
-            get;
-            set;
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
-        //clsText obj_Hostname = new clsText("Hostname", CiscoIOSWiz.txtHostname);
 
-        #endregion
-        #region VTY SSH/Telnet
+        public string LoginBanner
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
 
-        #endregion
-        #region Console
+        public string MOTDBanner
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public bool NoIPDomainLookup
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+        //public clsText Hostname
+        //{
+        //    get;
+        //    set;
+        //}
+        ////clsText obj_Hostname = new clsText("Hostname", CiscoIOSWiz.txtHostname);
 
         #endregion
         #region Enable Security
+        public bool EnableLogin
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
 
+        public bool EncryptEnablePassword
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string EnablePassword
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+        #endregion
+        #region VTY SSH/Telnet
+        public bool VTYLoggingSynchronous
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public bool VTYLogin
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string VTYPassword
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+        #endregion
+        #region Console
+        public bool ConsoleLoggingSynchronous
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public bool ConsoleLogin
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string ConsolePassword
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+        #endregion
+        
+        #endregion
+
+        #region Interfaces
+        public List<clsInterfaces> InterfacesList
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+        #region New Interface
+        public string NewInterfaceName
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public clsInterfaces.InterfaceTypes InterfaceType
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string NewInterfaceNumber
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
         #endregion
         #endregion
 
@@ -37,40 +238,40 @@ namespace Cisco_Config_Wiz
             get { return m_ListTextBox; }
             private set { m_ListTextBox = value; }
         }
-        #region ReturnTextBox
-        /// <summary>
-        /// Return the clsTextBox associatied with the name given
-        /// </summary>
-        /// <param name="pTBfound">Name of the TextBox</param>
-        /// <returns></returns>
-        public clsText ReturnTextBox(string pTBfound)
-        {
-            foreach (clsText pTextBox in m_ListTextBox)
-            {
-                if (pTextBox.Name == pTBfound)
-                {
-                    return pTextBox;
-                }
-            }
-            return null;
-        }
-        /// <summary>
-        /// Return the clsTextBox associatied with the textbox given
-        /// </summary>
-        /// <param name="pTBfound">TextBox itself</param>
-        /// <returns></returns>
-        public clsText ReturnTextBox(TextBox pTBfound)
-        {
-            foreach (clsText pTextBox in m_ListTextBox)
-            {
-                if (pTextBox.txtBox == pTBfound)
-                {
-                    return pTextBox;
-                }
-            }
-            return null;
-        }
-        #endregion
+        //#region ReturnTextBox
+        ///// <summary>
+        ///// Return the clsTextBox associatied with the name given
+        ///// </summary>
+        ///// <param name="pTBfound">Name of the TextBox</param>
+        ///// <returns></returns>
+        //public clsText ReturnTextBox(string pTBfound)
+        //{
+        //    foreach (clsText pTextBox in m_ListTextBox)
+        //    {
+        //        if (pTextBox.Name == pTBfound)
+        //        {
+        //            return pTextBox;
+        //        }
+        //    }
+        //    return null;
+        //}
+        ///// <summary>
+        ///// Return the clsTextBox associatied with the textbox given
+        ///// </summary>
+        ///// <param name="pTBfound">TextBox itself</param>
+        ///// <returns></returns>
+        //public clsText ReturnTextBox(TextBox pTBfound)
+        //{
+        //    foreach (clsText pTextBox in m_ListTextBox)
+        //    {
+        //        if (pTextBox.txtBox == pTBfound)
+        //        {
+        //            return pTextBox;
+        //        }
+        //    }
+        //    return null;
+        //}
+        //#endregion
 
         #region Doesn't work yet == set and remove title
         //public void setTitle(clsText pTextBox)
@@ -114,44 +315,44 @@ namespace Cisco_Config_Wiz
 
         #region Constructeur
 
-        public clsConfWiz(Form formCiscoIOSWiz)
+        public clsConfWiz()
         {
             #region ForEach pour les textbox
-            foreach (Control pControl1 in formCiscoIOSWiz.Controls)
-            {
-                if (pControl1 is TextBox)
-                {
-                    TextBox pTextBox = pControl1 as TextBox;
-                    m_ListTextBox.Add(new clsText(pTextBox.Text, pTextBox));
-                }
-                if (pControl1 is TabControl)
-                {
-                    TabControl pTabControl = pControl1 as TabControl;
-                    foreach (TabPage pTabPage in pTabControl.TabPages)
-                    {
-                        foreach (Control pControl2 in pTabPage.Controls)
-                        {
-                            if (pControl2 is TextBox)
-                            {
-                                TextBox pTextBox = pControl2 as TextBox;
-                                m_ListTextBox.Add(new clsText(pTextBox.Text, pTextBox));
-                            }
-                            foreach (Control pControl in pControl2.Controls)
-                            {
-                                if (pControl is TextBox)
-                                {
-                                    TextBox pTextBox = pControl as TextBox;
-                                    m_ListTextBox.Add(new clsText(pTextBox.Text, pTextBox));
-                                }
-                            }
+            //foreach (Control pControl1 in formCiscoIOSWiz.Controls)
+            //{
+            //    if (pControl1 is TextBox)
+            //    {
+            //        TextBox pTextBox = pControl1 as TextBox;
+            //        m_ListTextBox.Add(new clsText(pTextBox.Text, pTextBox));
+            //    }
+            //    if (pControl1 is TabControl)
+            //    {
+            //        TabControl pTabControl = pControl1 as TabControl;
+            //        foreach (TabPage pTabPage in pTabControl.TabPages)
+            //        {
+            //            foreach (Control pControl2 in pTabPage.Controls)
+            //            {
+            //                if (pControl2 is TextBox)
+            //                {
+            //                    TextBox pTextBox = pControl2 as TextBox;
+            //                    m_ListTextBox.Add(new clsText(pTextBox.Text, pTextBox));
+            //                }
+            //                foreach (Control pControl in pControl2.Controls)
+            //                {
+            //                    if (pControl is TextBox)
+            //                    {
+            //                        TextBox pTextBox = pControl as TextBox;
+            //                        m_ListTextBox.Add(new clsText(pTextBox.Text, pTextBox));
+            //                    }
+            //                }
                             
-                        }
-                    }
-                }
-            }
+            //            }
+            //        }
+            //    }
+            //}
             #endregion
 
-            Console.WriteLine(m_ListTextBox.Count.ToString());
+            //Console.WriteLine(m_ListTextBox.Count.ToString());
 
             //foreach (Control pControl in formCiscoIOSWiz.Controls)
             //{
@@ -164,5 +365,9 @@ namespace Cisco_Config_Wiz
             //}
         }
         #endregion
+
+        
+
+        
     }
 }

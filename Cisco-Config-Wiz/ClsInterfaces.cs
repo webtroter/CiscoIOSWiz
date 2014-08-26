@@ -10,7 +10,7 @@ namespace Cisco_Config_Wiz
         #region Constantes, variables et propriétés
 
         const int MAX_CIDR_MASK = 32;
-        byte[] GOOD_MASK_VALUES = { 255, 254, 252, 248, 240, 224, 192, 128, 0};
+        static byte[] GOOD_MASK_VALUES = { 0, 128, 192, 224, 240, 248, 242, 254, 255 };
 
         public string Name
         {
@@ -282,11 +282,62 @@ namespace Cisco_Config_Wiz
         /// <returns></returns>
         public byte[] CalculateMaskAndCIDR(int pCIDR)
         {
-            return m_tabMaskByte;
+            int fullByte = pCIDR / 8;
+            int restByte = pCIDR % 8;
+            byte[] MaskByteArray = new byte[4];
+            //for (int i = 0; i < fullByte - 1; i++)
+            //{
+            //    MaskByteArray[i] = GOOD_MASK_VALUES[8];
+            //}
+            if (fullByte == 1)
+            {
+                MaskByteArray[0] = GOOD_MASK_VALUES[8];
+            }
+            else if (fullByte == 2)
+            {
+                MaskByteArray[0] = MaskByteArray[1] = GOOD_MASK_VALUES[8];
+            }
+            else if (fullByte == 3)
+            {
+                MaskByteArray[0] = MaskByteArray[1] = MaskByteArray[2] = GOOD_MASK_VALUES[8];
+            }
+            MaskByteArray[fullByte] = GOOD_MASK_VALUES[restByte];
+            return MaskByteArray;
         }
         public void CalculateMaskAndCIDR(bool pFrom)
         {
 
+        }
+        public static string ReturnMaskAndCIDR(int pCIDR)
+        {
+            int fullByte = pCIDR / 8;
+            int restByte = pCIDR % 8;
+            byte[] MaskByteArray = new byte[4];
+            if (fullByte == 1)
+            {
+                MaskByteArray[0] = GOOD_MASK_VALUES[8];
+            }
+            else if (fullByte == 2)
+            {
+                MaskByteArray[0] = MaskByteArray[1] = GOOD_MASK_VALUES[8];
+            }
+            else if (fullByte == 3)
+            {
+                MaskByteArray[0] = MaskByteArray[1] = MaskByteArray[2] = GOOD_MASK_VALUES[8];
+            }
+            MaskByteArray[fullByte] = GOOD_MASK_VALUES[restByte];
+            string breturn = "";
+            int compt = 0;
+            foreach (byte pPart in MaskByteArray)
+            {
+                breturn += pPart.ToString();
+                if (compt != 3)
+                {
+                    compt++;
+                    breturn += '.';
+                }
+            }
+            return breturn;
         }
         #endregion
     }

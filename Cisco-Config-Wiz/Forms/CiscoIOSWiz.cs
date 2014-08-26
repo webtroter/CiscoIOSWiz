@@ -20,7 +20,7 @@ namespace Cisco_Config_Wiz
         clsText obj_MOTD;
         clsText obj_NewInterfaceName;
         clsText obj_NewInterfacenumber;
-        List<clsInterfaces> obj_ListInterfaces = new List<clsInterfaces>();
+        //List<clsInterfaces> obj_ListInterfaces = new List<clsInterfaces>();
         clsInterfaces obj_CurrentInterface = null;
         clsConfWiz ConfWiz;
 
@@ -41,7 +41,8 @@ namespace Cisco_Config_Wiz
                 cboNewInterfaceType.Items.Add(interfType.ToString());
             }
             cboNewInterfaceType.SelectedItem = cboNewInterfaceType.Items[0];
-            clsConfWiz ConfWiz = new clsConfWiz(this);
+            clsConfWiz ConfWiz = new clsConfWiz();
+
 
             //DEBUG
             txtOutput.AppendText("c68034f9fb64a322c66a8e07b40526622c470b2ba14f1a6edf2a56a278cc354b" + nl);
@@ -54,7 +55,7 @@ namespace Cisco_Config_Wiz
         #region Hostname
         private void txtHostname_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
         private void txtHostname_Enter(object sender, EventArgs e)
         {
@@ -69,6 +70,10 @@ namespace Cisco_Config_Wiz
             if (obj_Hostname.txtBox.TextLength == 0)
             {
                 obj_Hostname.SetBoxMode(clsText.BoxMode.Title);
+            }
+            else
+            {
+                Console.WriteLine("Calculated CIDR :" + clsInterfaces.ReturnMaskAndCIDR(int.Parse(txtHostname.Text)));
             }
         }
         #endregion
@@ -253,12 +258,12 @@ namespace Cisco_Config_Wiz
             if (newInterOK)
             {
                 errAddInterface.Clear();
-                obj_ListInterfaces.Add(new clsInterfaces(txtNewInterfaceName.Text,
+                ConfWiz.InterfacesList.Add(new clsInterfaces(txtNewInterfaceName.Text,
                     (clsInterfaces.InterfaceTypes)cboNewInterfaceType.SelectedIndex,
                     txtNewInterfaceNumber.Text));
                 obj_NewInterfaceName.SetBoxMode(clsText.BoxMode.Title);
                 obj_NewInterfacenumber.SetBoxMode(clsText.BoxMode.Title);
-                cboInterfaces.Items.Add(obj_ListInterfaces[obj_ListInterfaces.Count - 1]);
+                cboInterfaces.Items.Add(ConfWiz.InterfacesList[ConfWiz.InterfacesList.Count - 1]);
                 boxInterface.Enabled = true;
                 cboInterfaces.SelectedIndex = cboInterfaces.Items.Count - 1;
                 txtNoInterfaceWarning.Visible = false;
@@ -275,16 +280,16 @@ namespace Cisco_Config_Wiz
 
         #endregion
 
-
+        #region Update fields to current interface
         private void cboInterfaces_SelectedIndexChanged(object sender, EventArgs e)
         {
-            obj_CurrentInterface = obj_ListInterfaces[cboInterfaces.SelectedIndex];
+            obj_CurrentInterface = ConfWiz.InterfacesList[cboInterfaces.SelectedIndex];
             txtInterfaceName.Text = obj_CurrentInterface.Name;
             txtInterfaceTypeNum.Text = obj_CurrentInterface.ReturnType(obj_CurrentInterface.Type);
             numInterfaceClock.Enabled = obj_CurrentInterface.Type == clsInterfaces.InterfaceTypes.Serial;
             cboInterfaceUseClock.Enabled = obj_CurrentInterface.Type == clsInterfaces.InterfaceTypes.Serial;
         }
-
+        #endregion
 
         private void ipInterfaceMask_TextChanged(object sender, EventArgs e)
         {

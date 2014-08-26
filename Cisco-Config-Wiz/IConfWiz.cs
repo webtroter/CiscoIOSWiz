@@ -94,6 +94,10 @@ namespace Cisco_Config_Wiz
         string NewInterfaceNumber { get; set; }
 
         #endregion
+        /// <summary>
+        /// Current Interface to be shown in the form
+        /// </summary>
+        clsInterfaces CurrentInterface { get; set; }
 
         #endregion
     }

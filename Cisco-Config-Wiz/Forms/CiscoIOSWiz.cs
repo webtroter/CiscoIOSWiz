@@ -261,6 +261,7 @@ namespace Cisco_Config_Wiz
                 ConfWiz.InterfacesList.Add(new clsInterfaces(txtNewInterfaceName.Text,
                     (clsInterfaces.InterfaceTypes)cboNewInterfaceType.SelectedIndex,
                     txtNewInterfaceNumber.Text));
+
                 obj_NewInterfaceName.SetBoxMode(clsText.BoxMode.Title);
                 obj_NewInterfacenumber.SetBoxMode(clsText.BoxMode.Title);
                 cboInterfaces.Items.Add(ConfWiz.InterfacesList[ConfWiz.InterfacesList.Count - 1]);

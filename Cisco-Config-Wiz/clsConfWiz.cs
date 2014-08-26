@@ -10,51 +10,52 @@ namespace Cisco_Config_Wiz
     {
         #region General Configuration
         #region Hostname, etc.
+        string m_Hostname;
         public string Hostname
         {
             get
             {
-                throw new NotImplementedException();
+                return m_Hostname;
             }
             set
             {
-                throw new NotImplementedException();
+                m_Hostname = value;
             }
         }
-
+        string m_LoginBanner;
         public string LoginBanner
         {
             get
             {
-                throw new NotImplementedException();
+                return m_LoginBanner;
             }
             set
             {
-                throw new NotImplementedException();
+                m_LoginBanner = value;
             }
         }
-
+        string m_MOTDBanner;
         public string MOTDBanner
         {
             get
             {
-                throw new NotImplementedException();
+                return m_MOTDBanner;
             }
             set
             {
-                throw new NotImplementedException();
+                m_MOTDBanner = value;
             }
         }
-
+        bool m_NoIPdomlook;
         public bool NoIPDomainLookup
         {
             get
             {
-                throw new NotImplementedException();
+                return m_NoIPdomlook;
             }
             set
             {
-                throw new NotImplementedException();
+                m_NoIPdomlook = value;
             }
         }
         //public clsText Hostname
@@ -66,39 +67,40 @@ namespace Cisco_Config_Wiz
 
         #endregion
         #region Enable Security
+        bool m_ENLogin;
         public bool EnableLogin
         {
             get
             {
-                throw new NotImplementedException();
+                return m_ENLogin;
             }
             set
             {
-                throw new NotImplementedException();
+                m_ENLogin = value;
             }
         }
-
+        bool m_ENcrypt;
         public bool EncryptEnablePassword
         {
             get
             {
-                throw new NotImplementedException();
+                return m_ENcrypt;
             }
             set
             {
-                throw new NotImplementedException();
+                m_ENcrypt = value;
             }
         }
-
+        string m_ENPassword;
         public string EnablePassword
         {
             get
             {
-                throw new NotImplementedException();
+                return m_ENPassword;
             }
             set
             {
-                throw new NotImplementedException();
+                m_ENPassword = value;
             }
         }
         #endregion
@@ -180,15 +182,28 @@ namespace Cisco_Config_Wiz
         #endregion
 
         #region Interfaces
+        List<clsInterfaces> m_ListInterfaces;
         public List<clsInterfaces> InterfacesList
         {
             get
             {
-                throw new NotImplementedException();
+                return m_ListInterfaces;
+            }
+            private set
+            {
+                m_ListInterfaces = value;
+            }
+        }
+        clsInterfaces m_currentInterface = null;
+        public clsInterfaces CurrentInterface
+        {
+            get
+            {
+                return m_currentInterface;
             }
             set
             {
-                throw new NotImplementedException();
+                m_currentInterface = value;
             }
         }
         #region New Interface
@@ -230,14 +245,14 @@ namespace Cisco_Config_Wiz
         #endregion
         #endregion
 
-        #region General Things
+        #region Essais
 
-        private List<clsText> m_ListTextBox = new List<clsText>();
-        public List<clsText> ListTextBox
-        {
-            get { return m_ListTextBox; }
-            private set { m_ListTextBox = value; }
-        }
+        //private List<clsText> m_ListTextBox = new List<clsText>();
+        //public List<clsText> ListTextBox
+        //{
+        //    get { return m_ListTextBox; }
+        //    private set { m_ListTextBox = value; }
+        //}
         //#region ReturnTextBox
         ///// <summary>
         ///// Return the clsTextBox associatied with the name given
@@ -313,6 +328,17 @@ namespace Cisco_Config_Wiz
 
         #endregion
 
+        #region Méthodes
+        /// <summary>
+        /// 
+        /// </summary>
+        public void AddInterfaceToList()
+        {
+
+        }
+
+        #endregion
+
         #region Constructeur
 
         public clsConfWiz()
@@ -352,6 +378,8 @@ namespace Cisco_Config_Wiz
             //}
             #endregion
 
+            m_ListInterfaces = new List<clsInterfaces>();
+
             //Console.WriteLine(m_ListTextBox.Count.ToString());
 
             //foreach (Control pControl in formCiscoIOSWiz.Controls)
@@ -366,8 +394,5 @@ namespace Cisco_Config_Wiz
         }
         #endregion
 
-        
-
-        
     }
 }

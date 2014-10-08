@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Cisco_Config_Wiz
 {
-    class clsConfWiz : IConfWiz
+    class clsConfWiz
     {
         #region General Configuration
         #region Hostname, etc.

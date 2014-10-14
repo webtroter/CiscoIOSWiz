@@ -22,7 +22,6 @@ namespace Cisco_Config_Wiz
         clsText obj_NewInterfacenumber;
         //List<clsInterfaces> obj_ListInterfaces = new List<clsInterfaces>();
         clsInterfaces obj_CurrentInterface = null;
-        clsConfWiz ConfWiz;
 
         public CiscoIOSWiz()
         {
@@ -41,7 +40,6 @@ namespace Cisco_Config_Wiz
                 cboNewInterfaceType.Items.Add(interfType.ToString());
             }
             cboNewInterfaceType.SelectedItem = cboNewInterfaceType.Items[0];
-            clsConfWiz ConfWiz = new clsConfWiz();
 
 
             //DEBUG
@@ -258,13 +256,8 @@ namespace Cisco_Config_Wiz
             if (newInterOK)
             {
                 errAddInterface.Clear();
-                ConfWiz.InterfacesList.Add(new clsInterfaces(txtNewInterfaceName.Text,
-                    (clsInterfaces.InterfaceTypes)cboNewInterfaceType.SelectedIndex,
-                    txtNewInterfaceNumber.Text));
-
                 obj_NewInterfaceName.SetBoxMode(clsText.BoxMode.Title);
                 obj_NewInterfacenumber.SetBoxMode(clsText.BoxMode.Title);
-                cboInterfaces.Items.Add(ConfWiz.InterfacesList[ConfWiz.InterfacesList.Count - 1]);
                 boxInterface.Enabled = true;
                 cboInterfaces.SelectedIndex = cboInterfaces.Items.Count - 1;
                 txtNoInterfaceWarning.Visible = false;
@@ -284,7 +277,6 @@ namespace Cisco_Config_Wiz
         #region Update fields to current interface
         private void cboInterfaces_SelectedIndexChanged(object sender, EventArgs e)
         {
-            obj_CurrentInterface = ConfWiz.InterfacesList[cboInterfaces.SelectedIndex];
             txtInterfaceName.Text = obj_CurrentInterface.Name;
             txtInterfaceTypeNum.Text = obj_CurrentInterface.ReturnType(obj_CurrentInterface.Type);
             numInterfaceClock.Enabled = obj_CurrentInterface.Type == clsInterfaces.InterfaceTypes.Serial;

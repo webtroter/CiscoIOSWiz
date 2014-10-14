@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsInterfaces.cs" />
+    <Compile Include="clsIOSConfig.cs" />
     <Compile Include="clsText.cs" />
     <Compile Include="Forms\CiscoIOSWiz.cs">
       <SubType>Form</SubType>

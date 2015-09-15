@@ -32,10 +32,7 @@ namespace Cisco_Config_Wiz
         #region Name and Banners
 
         #region Hostname
-        private void txtHostname_TextChanged(object sender, EventArgs e)
-        {
 
-        }
         private void txtHostname_Enter(object sender, EventArgs e)
         {
             if (obj_Hostname.BoxModeObj == clsText.BoxMode.Title)
@@ -43,7 +40,6 @@ namespace Cisco_Config_Wiz
                 obj_Hostname.SetBoxMode(clsText.BoxMode.Default);
             }
         }
-
         private void txtHostname_Leave(object sender, EventArgs e)
         {
             if (obj_Hostname.txtBox.TextLength == 0)
@@ -51,12 +47,13 @@ namespace Cisco_Config_Wiz
                 obj_Hostname.SetBoxMode(clsText.BoxMode.Title);
             }
         }
-        #endregion
-        #region Login Banner
-        private void txtLogBanner_TextChanged(object sender, EventArgs e)
+        private void txtHostname_TextChanged(object sender, EventArgs e)
         {
 
         }
+        #endregion
+        #region Login Banner
+
         private void txtLogBanner_Enter(object sender, EventArgs e)
         {
             if (obj_Banner.BoxModeObj == clsText.BoxMode.Title)
@@ -71,6 +68,10 @@ namespace Cisco_Config_Wiz
             {
                 obj_Banner.SetBoxMode(clsText.BoxMode.Title);
             }
+        }
+        private void txtLogBanner_TextChanged(object sender, EventArgs e)
+        {
+
         }
         #endregion
         #region MOTD
@@ -101,10 +102,12 @@ namespace Cisco_Config_Wiz
         private void chkEnLogin_CheckedChanged(object sender, EventArgs e)
         {
             txtEnPass.Enabled = chkEncrypt.Enabled = chkEnLogin.Checked;
+            ClearErrorOnEmpty(txtEnPass);
         }
 
         private void txtEnPass_Enter(object sender, EventArgs e)
         {
+            ClearErrorOnEmpty((TextBox)sender);
             if (obj_EnPass.BoxModeObj == clsText.BoxMode.Title)
             {
                 obj_EnPass.SetBoxMode(clsText.BoxMode.Password);
@@ -113,12 +116,31 @@ namespace Cisco_Config_Wiz
 
         private void txtEnPass_Leave(object sender, EventArgs e)
         {
+            ClearErrorOnEmpty((TextBox)sender);
             if (obj_EnPass.txtBox.TextLength == 0)
             {
                 obj_EnPass.SetBoxMode(clsText.BoxMode.Title);
+                SetErrorOnEmpty((TextBox)sender);
+                this.Focus();
             }
         }
-
+        private void SetErrorOnEmpty(TextBox m_txtBox)
+        {
+            Size m_size = (m_txtBox.Size);
+            m_size.Width = m_size.Width - 14;
+            m_txtBox.Size = m_size;
+            err_Empty.SetError(m_txtBox, "Can't be empty if enabled");
+        }
+        private void ClearErrorOnEmpty(TextBox m_txtBox)
+        {
+            if (err_Empty.GetError(txtEnPass) != "")
+            {
+                Size m_size = (m_txtBox.Size);
+                m_size.Width = m_size.Width + 14;
+                m_txtBox.Size = m_size;
+                err_Empty.Clear();
+            }
+        }
         #endregion
         #region VTY
         private void chkVTYLogin_CheckedChanged(object sender, EventArgs e)
@@ -164,6 +186,8 @@ namespace Cisco_Config_Wiz
 
         }
         #endregion
+
+        
 
 
 

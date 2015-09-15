@@ -29,6 +29,8 @@ namespace Cisco_Config_Wiz
         }
         #region Constants
         #endregion
+
+        #region Genreal Config
         #region Name and Banners
 
         #region Hostname
@@ -187,7 +189,19 @@ namespace Cisco_Config_Wiz
         }
         #endregion
 
-        
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About formAbout = new About();
+            formAbout.ShowDialog();
+        }
+        #endregion
+
+        #region Interfaces
+
+
+
+        #endregion
+
 
 
 

@@ -30,7 +30,7 @@ namespace Cisco_Config_Wiz
         #region Constants
         #endregion
 
-        #region Genreal Config
+        #region General Config
         #region Name and Banners
 
         #region Hostname
@@ -195,6 +195,11 @@ namespace Cisco_Config_Wiz
             formAbout.ShowDialog();
         }
         #endregion
+
+        private void cboInterfaces_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
 
         #region Interfaces
 
